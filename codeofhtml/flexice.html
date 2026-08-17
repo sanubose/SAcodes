@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICe cream flex</title>
+    <style>
+
+body {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #fad0c4, #ffdde1);
+}
+
+                *{
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                   
+                }
+                .main{
+                    text-align: center;
+                   
+                    color:black;
+                    
+                }
+                .main a{
+                    color: rgba(0, 0, 0, 0.7);
+                    text-decoration: none;
+                    
+                }
+                .choco img{
+                    width: 100%;
+                    height: 500px;
+                    display: flex;
+                    justify-content: center;
+                }
+                 h3{
+                    margin: 30px;
+                    font-size: 30px;
+                }
+
+                .WAFFLE {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap; /* Allow items to wrap */
+        justify-content: center;
+        align-items: center; /* Center items */
+        gap: 20px; /* Add spacing */
+         }
+                
+    .box {
+        width: 250px; /* Fixed width */
+        border: 1px solid rgba(0, 0, 0, 0.292);
+        padding: 10px;
+        text-align: center;
+        border-radius: 10px;
+
+    }
+                .box img {
+                    padding :10px;
+                    width: 100%;
+                    height: auto;
+                    border-radius:20px;
+                 }
+                 .price{
+                    font-size: 20px;
+                    font-weight: 100;
+                 }
+                 button{
+                    padding:10px 5px;
+                    margin:5px;
+                    background-color: rgba(255, 0, 0, 0.795);
+                    border-radius: 20px;
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                    border:none;
+                    
+                 }
+                 
+                 .box button a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .box button:hover {
+        background: rgba(77, 207, 198, 0.349);
+    }
+    .box:hover {
+    transform: scale(1.05); /* Box ko bada karega */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+            .mlik {
+                width: 1200px;
+                height: 200px;
+                display: flex;
+                justify-content: center;
+            }
+            .milk img {
+    width: 100%;  /* Image will scale as per screen width */
+    max-width: 1800px; /* Maximum width limit */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Removes extra spacing */
+     /* Centers the image */
+}
+    </style>
+</head>
+<body>
+     <h1 class="main"> N O T O</h1>
+       <p class="main"><a href="#">ICE CREAM AND DESSERTS</a></p>
+        <div class="choco"><img src="https://eatnoto.com/cdn/shop/files/Website-Banner2-Final.jpg?v=1709302287"></div>
+
+               <h3 class="main">WAFFLE ICE CREAM SANDWICH</h3>
+        <div class="WAFFLE ">
+
+         <div class="box">
+            <img src="https://eatnoto.com/cdn/shop/files/AssortedTacoFront_533x.jpg?v=1714481861" alt="">
+            <p class="note">Assorted Flavour - Choco <br> Taco [4 pieces]</p>
+            <p class="price">₹ 500.00</p>
+            <button><a href="#">ORDER ON SWIGGY</a></button><br/>
+            <button><a href="#">ORDER ON ZOMATO</a></button>
+        </div>
+
+         <div class="box">
+            <img src="https://eatnoto.com/cdn/shop/files/AssortedTacoFront_533x.jpg?v=1714481861" alt="">
+            <p class="note">Rich Chocolate - Choco <br> Taco [4 pieces]</p>
+            <p class="price">₹ 500.00</p>
+            <button><a href="#">ORDER ON SWIGGY</a></button><br/>
+            <button><a href="#">ORDER ON ZOMATO</a></button>
+        </div>
+
+         <div class="box">
+            <img src="https://eatnoto.com/cdn/shop/files/ColdCoffeeTacoFront_533x.jpg?v=1714482025" alt="">
+            <p class="note">Crunchy Caramel - Choco <br> Taco [4 pieces]</p>
+            <p class="price">₹ 500.00</p>
+            <button><a href="#">ORDER ON SWIGGY</a></button><br/>
+            <button><a href="#">ORDER ON ZOMATO</a></button>
+        </div>
+
+         <div class="box">
+            <img src="https://eatnoto.com/cdn/shop/files/SweetBerryTacoFront_533x.jpg?v=1709209672" alt="">
+           
+            <p>Assorted Flavour - Choco <br> Taco [4 pieces]</p>
+            <p class="price"></p>
+            <p class="price">₹ 500.00</p>
+            <button><a href="#">ORDER ON SWIGGY</a></button><br/>
+            <button><a href="#">ORDER ON ZOMATO</a></button>
+        </div>
+
+        </div>
+
+
+        <h3 class="main">SUMMER DELIGHTS</h3>
+        <div class="WAFFLE ">
+
+         <div class="box">
+            <img src="https://eatnoto.com/cdn/shop/files/StrawberryFront._1_533x.jpg?v=1709117706" alt="">
+            <p class="note">Assorted Flavour - Choco <br> Taco [4 pieces]</p>
+            <p class="price">₹ 100.00</p>
+            <button><a href="#">ORDER ON SWIGGY</a></button><br/>
+            <button><a href="#">ORDER ON ZOMATO</a></button>
+        </div>
+
+         <div class="box">
+            <img src="https://eatnoto.com/cdn/shop/files/MangoCoconutFront_533x.jpg?v=1709037962" alt="">
+            <p class="note">Rich Chocolate - Choco <br> Taco [4 pieces]</p>
+            <p class="price">₹ 100.00</p>
+            <button><a href="#">ORDER ON SWIGGY</a></button><br/>
+            <button><a href="#">ORDER ON ZOMATO</a></button>
+        </div>
+
+         <div class="box">
+            <img src="https://eatnoto.com/cdn/shop/files/KalaJamun_Front._533x.png?v=1709037385" alt="">
+            <p class="note">KALA JAMOON POP <br> Taco [4 pieces]</p>
+            <p class="price">₹ 100.00</p>
+            <button><a href="#">ORDER ON SWIGGY</a></button><br/>
+            <button><a href="#">ORDER ON ZOMATO</a></button>
+        </div>
+
+         <div class="box">
+            <img src="https://eatnoto.com/cdn/shop/files/OrangeFront1._533x.jpg?v=1709044908" alt="">
+           
+            <p>ORANGE POP <br> Taco [4 pieces]</p>
+            
+            <p class="price">₹ 100.00</p>
+            <button><a href="#">ORDER ON SWIGGY</a></button><br/>
+            <button><a href="#">ORDER ON ZOMATO</a></button>
+        </div>
+            
+
+
+
+
+
+
+
+        <div class="box">
+            <img src="https://eatnoto.com/cdn/shop/files/belgian_front._1100x.jpg?v=1709032877" alt="">
+            <p class="note">Assorted Flavour - Choco <br> Taco [4 pieces]</p>
+            <p class="price">₹ 120.00</p>
+            <button><a href="#">ORDER ON SWIGGY</a></button><br/>
+            <button><a href="#">ORDER ON ZOMATO</a></button>
+        </div>
+
+         <div class="box">
+            <img src="https://eatnoto.com/cdn/shop/files/StrawberryFront._1_533x.jpg?v=1709117706" alt="">
+            <p class="note">Rich Chocolate - Choco <br> Taco [4 pieces]</p>
+            <p class="price">₹ 120.00</p>
+            <button><a href="#">ORDER ON SWIGGY</a></button><br/>
+            <button><a href="#">ORDER ON ZOMATO</a></button>
+        </div>
+
+         <div class="box">
+            <img src="https://eatnoto.com/cdn/shop/files/Pinacoladafront_533x.jpg?v=1709045101" alt="">
+            <p class="note"> PINA COLADA POP <br> Taco [4 pieces]</p>
+            <p class="price">₹ 120.00</p>
+            <button><a href="#">ORDER ON SWIGGY</a></button><br/>
+            <button><a href="#">ORDER ON ZOMATO</a></button>
+        </div>
+
+         <div class="box">
+            <img src="https://eatnoto.com/cdn/shop/files/Fast_up-Front_533x.png?v=1713723150" alt="">
+           
+            <p>CARNBERRY ORANGE <br> Taco [4 pieces]</p>
+            
+            <p class="price">₹ 120.00</p>
+            <button><a href="#">ORDER ON SWIGGY</a></button><br/>
+            <button><a href="#">ORDER ON ZOMATO</a></button>
+        </div>
+        </div>
+
+
+        <h3 class="main">GREEK YOGURT CHEESECAKES</h3>
+        <div class="WAFFLE ">
+
+            <div class="box">
+               <img src="https://eatnoto.com/cdn/shop/files/3swiggy_IloveNewYork_533x.png?v=1697798586" alt="">
+               <p class="note">NEW YORK GREEK YORK <br> CHEESECAKE</p>
+               <p class="price">₹ 340.00</p>
+               <button><a href="#">ORDER ON SWIGGY</a></button><br/>
+               <button><a href="#">ORDER ON ZOMATO</a></button>
+           </div>
+   
+            <div class="box">
+               <img src="https://eatnoto.com/cdn/shop/files/swiggy1_RocherRomance_533x.png?v=1697796235" alt="">
+               <p class="note">NUTELLA GREEK YOGURT<br> CHEESECAKE</p>
+               <p class="price">₹ 340.00</p>
+               <button><a href="#">ORDER ON SWIGGY</a></button><br/>
+               <button><a href="#">ORDER ON ZOMATO</a></button>
+           </div>
+   
+            <div class="box">
+               <img src="https://eatnoto.com/cdn/shop/files/4swiggy_BisCrush_533x.png?v=1697797297" alt="">
+               <p class="note">BISCOFF GREEK YOGURT<br> CHEESECAKE</p>
+               <p class="price">₹ 340.00</p>
+               <button><a href="#">ORDER ON SWIGGY</a></button><br/>
+               <button><a href="#">ORDER ON ZOMATO</a></button>
+           </div>
+   
+            <div class="box">
+               <img src="https://eatnoto.com/cdn/shop/files/2swiggy_BlueberryBaby_533x.png?v=1697798951" alt="">
+              
+               <p>BLUEBERRY GREEK YOGUT <br>CHEESECAKE</p>
+               <p class="price"></p>
+               <p class="price">₹ 340.00</p>
+               <button><a href="#">ORDER ON SWIGGY</a></button><br/>
+               <button><a href="#">ORDER ON ZOMATO</a></button>
+           </div>
+   
+           </div>
+           <div class="milk"><img src="https://naturalicecreams.in/wp-content/uploads/2024/01/3-ingredients-milkfruits-03-1.png"></div>
+
+           
+
+          
+
+
+</body>
+</html>

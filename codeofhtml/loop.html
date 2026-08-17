@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reebok Footer</title>
+    <style>
+         /* General Styling */
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+        }
+
+        /*  Basic reset for consistent styling */
+        body, h1, h4, p, a, ul, li {  /* Include all potentially problematic elements */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0; /*  Important for consistent layout */
+        }
+
+        /*  Footer Styles - Section 1 (The Reebok Club section) */
+        .footer {
+            background-color: #fff; /* White background for the top section */
+            color: #000; /* Black text color for general text */
+            text-align: center;
+            padding: 20px 0;
+            font-family: sans-serif; /*  Generic sans-serif font */
+        }
+
+        .footer-top {
+            margin-bottom: 10px; /*  Spacing between the follow us and the red area */
+        }
+
+        .footer-top p {
+            font-size: 0.8em; /*  Smaller font size for "FOLLOW US ON" */
+            margin-bottom: 5px;
+        }
+
+        .footer-top a {
+            color: #000;
+            text-decoration: underline; /*  Underline social media links */
+            font-size: 0.9em;
+        }
+
+        .footer-red {
+            background-color: #f00; /* Red background */
+            color: #fff; /* White text */
+            padding: 30px 0; /*  Increase padding for better visual balance */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-red h1 {
+            font-size: 2em;
+            margin-right: 20px; /*  Space between heading and button */
+            font-weight: bold; /*  Ensure the heading is bold */
+        }
+
+        .footer-button {
+            background-color: #000; /* Black background for the button */
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px; /*  Slightly rounded corners */
+            font-size: 1em;
+            display: inline-block; /*  Treat as inline block for proper alignment */
+            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        .footer-button:hover {
+            background-color: #333; /* Darker background on hover */
+        }
+
+        /*  Responsive adjustments (example) */
+        @media (max-width: 600px) {
+            .footer-red {
+                flex-direction: column; /* Stack elements vertically on smaller screens */
+                text-align: center;
+            }
+
+            .footer-red h1 {
+                margin-right: 0; /* Remove right margin */
+                margin-bottom: 10px; /* Add bottom margin instead */
+                font-size: 1.5em; /*  Slightly reduce the size */
+            }
+        }
+
+        /*  Footer Styles - Section 2 (Support, Legal, Currency, Payment) */
+        .footer-container {
+          background-color: #d6e0e8; /* Match the background color */
+          padding: 30px 0;
+          color: #000; /* Match the text color */
+        }
+
+        .footer-content {
+          max-width: 1200px; /* Or your desired container width */
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+        }
+
+        /* Column Styling */
+        .footer-column {
+          flex: 1;
+          min-width: 200px;
+          padding: 0 15px;
+        }
+
+        .footer-column h4 {
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+
+        .footer-column ul {
+          list-style: none;
+          padding: 0;
+        }
+
+        .footer-column li {
+          margin-bottom: 5px;
+        }
+
+        .footer-column a {
+          text-decoration: none;
+          color: #000;
+        }
+
+        /* Currency Styling */
+        .currency-link {
+            text-decoration: underline;
+        }
+
+        /* Payment Methods Styling */
+        .payment-methods {
+          margin-top: 20px;
+          text-align: left;
+        }
+
+        .payment-methods img {
+          height: 20px; /* Adjust as needed */
+          margin-right: 5px;
+        }
+
+        /* Copyright Styling */
+        .copyright {
+          background-color: #fff; /* Slightl lighter background for the copyright line*/
+          text-align: left;
+          padding: 10px;
+          font-size: 12px;
+          max-width: 1200px;
+          margin: 0 auto; /* Center the copyright */
+        }
+        .payment-methods-list {
+          margin-top: 10px;
+        }
+        .payment-methods-list img {
+          margin-right: 5px;
+          height: 20px; /* Adjust the size as needed */
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+          .footer-content {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+          .footer-column {
+            margin-bottom: 20px;
+          }
+        }
+    </style>
+</head>
+<body>
+
+    <footer class="footer">
+        <div class="footer-top">
+            <p>FOLLOW US ON</p>
+            <a href="#">@REEBOKLTD</a> AND <a href="#">@REEBOKEUROPE</a>
+        </div>
+
+        <div class="footer-red">
+            <h1>JOIN THE REEBOK CLUB</h1>
+            <a href="#" class="footer-button">JOIN THE CLUB</a>
+        </div>
+    </footer>
+
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h4>SUPPORT</h4>
+          <ul>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Track your order</a></li>
+            <li><a href="#">Return your order</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>LEGAL</h4>
+          <ul>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Cookie Preferences</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>COUNTRY/CURRENCY</h4>
+          <p>United Kingdom / £ <a href="#" class="currency-link">Change</a></p>
+
+          <div class="payment-methods">
+            <h4>PAYMENT METHODS</h4>
+            <div class="payment-methods-list">
+              <img src="https://i.imgur.com/a4HhS1F.png" alt="American Express">
+              <img src="https://i.imgur.com/dCGvD8H.png" alt="Discover">
+              <img src="https://i.imgur.com/4fo7kYq.png" alt="JCB">
+              <img src="https://i.imgur.com/0yUq19b.png" alt="Maestro">
+              <img src="https://i.imgur.com/dF1Mv5n.png" alt="Mastercard">
+              <img src="https://i.imgur.com/0eY0l10.png" alt="Visa">
+              <br>
+              <img src="https://i.imgur.com/v88h3H5.png" alt="Apple Pay">
+              <img src="https://i.imgur.com/9X5g47P.png" alt="PayPal">
+              <img src="https://i.imgur.com/i3UjU1Z.png" alt="Klarna">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      Reebok™ is a trademark of Reebok International Limited. ©2023 Reebok International Limited. All Rights Reserved.
+    </div>
+
+</body>
+</html>

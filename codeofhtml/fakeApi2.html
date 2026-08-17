@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 5%;
+        margin-left: 5%;
+        margin-right: 5%;
+        grid-gap: 20px;
+      }
+
+      #container > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #cecece;
+      }
+
+      img {
+        width: 90%;
+        height: 225px;
+      }
+
+      #pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      button {
+        margin: 0 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+    </style>
+    <title>E Commerce</title>
+  </head>
+  <body>
+    <h1>E Commerce</h1>
+    <div id="container"></div>
+    <div id="pagination">
+      <button id="prev" onclick="changePage(-1)">Previous</button>
+      <span id="page-info"></span>
+      <button id="next" onclick="changePage(1)">Next</button>
+    </div>
+  </body>
+  <script>
+    let container = document.getElementById("container");
+    let pageInfo = document.getElementById("page-info");
+    let data = [];
+    let currentPage = 1;
+    const itemsPerPage = 4;
+
+    // Get the data
+    fetch("https://fakestoreapi.com/products")
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (res) {
+        data = res;
+        displayData();
+      });
+
+    function displayData() {
+      container.innerHTML = "";
+      let start = (currentPage - 1) * itemsPerPage;
+      let end = start + itemsPerPage;
+      let paginatedItems = data.slice(start, end);
+
+      paginatedItems.forEach(function (product) {
+        let div = document.createElement("div");
+        let productImg = document.createElement("img");
+        productImg.src = product.image;
+        let title = document.createElement("p");
+        title.innerText = product.title;
+        let price = document.createElement("p");
+        price.innerText = "INR : " + product.price;
+        div.append(productImg, title, price);
+        container.append(div);
+      });
+
+      pageInfo.innerText = `Page ${currentPage} of ${Math.ceil(data.length / itemsPerPage)}`;
+    }
+
+    function changePage(direction) {
+      let totalPages = Math.ceil(data.length / itemsPerPage);
+      currentPage += direction;
+      if (currentPage < 1) currentPage = 1;
+      if (currentPage > totalPages) currentPage = totalPages;
+      displayData();
+    }
+  </script>
+</html>

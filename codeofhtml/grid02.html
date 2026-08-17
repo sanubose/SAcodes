@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+     <style>
+        *{
+            margin:10px;
+            padding:10px;
+            box-sizing: border-box;
+        }
+        html{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 62.5%;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color:#f3f3f3;
+            display: flex;
+            justify-content:center;
+            align-items:center;
+           
+
+        }
+        main {
+        padding: 20px;
+        max-width: 100%;
+        width: 1200px;
+        background-color: #eeeeee;
+        box-shadow: rgba(0,0,0,0.1) 0px 20px 25px -5px,
+               rgba(0,0,0,0.04) 0px 10px 10px -5px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 100px 200px 200px 100px;
+        grid-gap: 10px;
+    }
+
+        nav{
+            background-color: #d3c6b8;
+            grid-column: 1/-1;
+            display: flex;
+             align-items: center;
+              justify-content: center;
+            font-size: 2rem;
+             font-weight: bold;
+             border-radius: 10px;
+
+        }
+        aside{
+            background-color: #b09c98;
+            grid-row: 2/ span 2;
+            display: flex;
+            align-items: center;
+           justify-content: center;
+           font-size: 2rem;
+           font-weight: bold;
+           border-radius: 10px;
+        }
+        .box1{
+            background-color: rgba(170, 204, 209, 0.374);
+            display: flex;
+             align-items: center;
+              justify-content: center;
+            font-size: 2rem;
+             font-weight: bold;
+             border-radius: 10px;
+        }
+        .box2{
+            background-color: rgba(151, 123, 37, 0.801);
+            display: flex;
+             align-items: center;
+              justify-content: center;
+            font-size: 2rem;
+             font-weight: bold;
+             border-radius: 10px;
+        }
+        .box3{
+            background-color: rgba(74, 180, 25, 0.708);
+            display: flex;
+             align-items: center;
+              justify-content: center;
+            font-size: 2rem;
+             font-weight: bold;
+             border-radius: 10px;
+        }
+        .main-content{
+            background-color: #b09c98;
+            grid-column: 2/-1;
+            display: flex;
+             align-items: center;
+              justify-content: center;
+            font-size: 2rem;
+             font-weight: bold;
+             border-radius: 10px;
+        }
+        footer{
+            background-color: chocolate;
+            grid-column: 1/-1;
+            display: flex;
+             align-items: center;
+              justify-content: center;
+            font-size: 2rem;
+             font-weight: bold;
+             border-radius: 10px;
+        }
+     </style>
+</head>
+         
+<body>
+
+    <div class=""></div>
+    <main>
+        <nav>navbar</nav>
+        <aside>aside</aside>
+        <article class="box1">box1</article>
+        <article class="box2">box2</article>
+        <article class="box3">box3</article>
+
+        <section class="main-content">main content part</section>
+        <footer>footer</footer>
+    </main>
+</body>
+</html>

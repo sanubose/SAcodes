@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Example</title>
+    <style>
+        #parentContainer {
+            display: grid;
+            grid-template-columns: 30% 30% 30% ;
+           grid-template-rows: 30px 30px;
+        }
+
+        #parentContainer > div {
+            width: 100px;
+            height: 100px;
+            color: white;
+        }
+
+        #parentContainer > div:first-child {
+            background-color: palevioletred;
+        }
+
+        #parentContainer > div:nth-child(2) {
+            background-color: cornflowerblue;
+        }
+
+        #parentContainer > div:nth-child(3) {
+            background-color: indianred;
+        }
+
+        #parentContainer > div:nth-child(4) {
+            background-color: deepskyblue;
+        }
+
+        #parentContainer > div:nth-child(5) {
+            background-color: deeppink;
+        }
+
+        #parentContainer > div:nth-child(6) {
+            background-color: mediumseagreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="parentContainer">
+        <div>Box1</div>
+        <div>Box 2</div>
+        <div>Box 3</div>
+        <div>Box 4</div>
+        <div>Box 5</div>
+        <div>Box 6</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puma</title>
+      <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+        }
+        .navbar{
+            display: flex;
+            align-items:center;
+            justify-content: space-between;
+            background-color: black;
+            color:white;
+            padding: 15px 30px;
+        }
+        .logo img {
+            width: 60px; /* Adjust logo size */
+        }
+        .menu{
+            list-style: none;
+            display: flex;
+            gap:20px;
+        }
+        .menu li a{
+            text-decoration: none;
+            color:white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icons input {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.icons span {
+    font-size: 20px;
+    cursor: pointer;
+}
+         .container-1{
+
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap; /* Ensures images wrap on smaller screens */
+            max-width: 1200px; /* Limits the width of the container */
+            margin: auto; /* Centers the container */
+            padding: 20px 20px;
+            
+          }
+
+           img{
+            width: 300px; /* Consistent width */
+            height: 400px; /* Consistent height */
+            object-fit: cover; /* Ensures images don’t stretch */
+            border-radius: 10px; /* Optional: Adds rounded corners */
+          }
+       
+      </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="puma-logo" alt="puma logo">
+            </div>
+            <ul class="menu">
+                <li><a href="#">New</a></li>
+                <li><a href="#">Man</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Motorspot</a></li>
+                <li><a href="#">Collaborations</a></li>
+                <li><a href="#">Kids</a></li>
+                <li><a href="#">Outlet</a></li>
+            </ul>
+
+            <div class="icons">
+                <input type="search" placeholder="search">
+                <span>❤️</span>
+                <span>🛒</span>
+                <span>👤</span>
+
+            </div>
+        </nav>
+    </header>
+     
+    <div class="container-1">
+        <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/630099/01/mod01/fnd/IND/fmt/png/PUMA-x-TEENAGE-MUTANT-NINJA-TURTLES-Men's-Relaxed-Fit-Graphic-Tee">
+        <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/522433/01/mod01/fnd/IND/fmt/png/Maternity-Women's-Relaxed-Fit-Training-Tank-Top">
+        <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_500,h_500/global/624204/05/mod01/fnd/IND/fmt/png/BMW-M-Motorsport-Kids'-T-shirt">
+
+    </div>
+</body>
+</html>

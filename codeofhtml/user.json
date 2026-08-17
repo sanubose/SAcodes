@@ -1,0 +1,106 @@
+{
+    "users": {
+      "1001": {
+        "name": "Amit Sharma",
+        "email": "amit.sharma@gmail.com",
+        "userID": 1001
+      },
+      "1002": {
+        "name": "Rahul Verma",
+        "email": "rahul.verma@gmail.com",
+        "userID": 1002
+      },
+      "1003": {
+        "name": "Neha Gupta",
+        "email": "neha.gupta@gmail.com",
+        "userID": 1003
+      },
+      "1004": {
+        "name": "Priya Singh",
+        "email": "priya.singh@gmail.com",
+        "userID": 1004
+      },
+      "1005": {
+        "name": "Vikas Yadav",
+        "email": "vikas.yadav@gmail.com",
+        "userID": 1005
+      },
+      "1006": {
+        "name": "Anjali Patel",
+        "email": "anjali.patel@gmail.com",
+        "userID": 1006
+      },
+      "1007": {
+        "name": "Suresh Kumar",
+        "email": "suresh.kumar@gmail.com",
+        "userID": 1007
+      },
+      "1008": {
+        "name": "Kavita Das",
+        "email": "kavita.das@gmail.com",
+        "userID": 1008
+      },
+      "1009": {
+        "name": "Deepak Mishra",
+        "email": "deepak.mishra@gmail.com",
+        "userID": 1009
+      },
+      "1010": {
+        "name": "Manoj Joshi",
+        "email": "manoj.joshi@gmail.com",
+        "userID": 1010
+      },
+      "1011": {
+        "name": "Ritu Sinha",
+        "email": "ritu.sinha@gmail.com",
+        "userID": 1011
+      },
+      "1012": {
+        "name": "Alok Mehta",
+        "email": "alok.mehta@gmail.com",
+        "userID": 1012
+      },
+      "1013": {
+        "name": "Pooja Choudhary",
+        "email": "pooja.choudhary@gmail.com",
+        "userID": 1013
+      },
+      "1014": {
+        "name": "Rajesh Tiwari",
+        "email": "rajesh.tiwari@gmail.com",
+        "userID": 1014
+      },
+      "1015": {
+        "name": "Sonia Malhotra",
+        "email": "sonia.malhotra@gmail.com",
+        "userID": 1015
+      },
+      "1016": {
+        "name": "Tarun Saxena",
+        "email": "tarun.saxena@gmail.com",
+        "userID": 1016
+      },
+      "1017": {
+        "name": "Meena Agarwal",
+        "email": "meena.agarwal@gmail.com",
+        "userID": 1017
+      },
+      "1018": {
+        "name": "Nitin Pandey",
+        "email": "nitin.pandey@gmail.com",
+        "userID": 1018
+      },
+      "1019": {
+        "name": "Swati Bansal",
+        "email": "swati.bansal@gmail.com",
+        "userID": 1019
+      },
+      "1020": {
+        "name": "Aakash Chandra",
+        "email": "aakash.chandra@gmail.com",
+        "userID": 1020
+      }
+    }
+  }
+  
+  

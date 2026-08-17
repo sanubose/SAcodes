@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DemocracyHub - Laws</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+        color: #ffffff;
+      /* background-color: #f5f7fa; */
+    }
+
+    header {
+      background-color: #1a1a2e;
+      padding: 20px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo {
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .logo span {
+      color: #00adb5;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #00adb5;
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .auth-buttons button {
+      padding: 8px 18px;
+      border-radius: 10px;
+      border: 2px solid #00adb5;
+      background: transparent;
+      color: #00adb5;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .auth-buttons button:hover {
+      background-color: #00adb5;
+      color: #ffffff;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background-color: #1a1a2e;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        display: none;
+        padding: 10px 0;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .auth-buttons {
+        display: none;
+      }
+    }
+
+    h2 {
+      text-align: center;
+      margin: 30px 0;
+      color: #25c3b6;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 0 20px 40px;
+    }
+
+    .law-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      border-left: 6px solid #00adb5;
+      transition: transform 0.2s ease;
+    }
+
+    .law-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .law-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #1a1a2e;
+    }
+
+    .law-summary {
+      font-size: 0.95rem;
+      color: #444;
+      margin-bottom: 15px;
+    }
+
+    .law-status {
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      display: inline-block;
+      border-radius: 20px;
+    }
+
+    .pending {
+      background-color: #fff3cd;
+      color: #856404;
+    }
+
+    .passed {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .feedback-section {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      margin: 30px 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .feedback-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 20px;
+    }
+
+    .feedback-form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .feedback-form label {
+      margin-bottom: 5px;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .feedback-form textarea {
+      resize: vertical;
+      min-height: 120px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .feedback-form button {
+      padding: 10px 20px;
+      background-color: #00adb5;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .feedback-form button:hover {
+      background-color: #008c8a;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Democracy<span>Hub</span></div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="notifications.html">Notifications</a></li>
+        <li><a href="AI.html">AI</a></li>
+        <li><a href="#feedback">Feedback</a></li>
+        <li><a href="voting.html">Vote</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="initiatives.html">Initiatives</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="login.html"><button onclick="login()">Login</button></a>
+      <a href="signup.html"><button onclick="signup()">Sign Up</button></a>
+    </div>
+  </header>
+
+  
+  <h2 id="laws"> Legislation Summaries</h2>
+
+  <div class="card-container">
+    <div class="law-card">
+      <div class="law-title">Plastic Ban Bill</div>
+      <div class="law-summary">Aims to reduce plastic waste by banning single-use plastics in public markets.</div>
+      <div class="law-status passed">Passed</div>
+    </div>
+
+    <div class="law-card">
+      <div class="law-title">Street Vendor Regulation</div>
+      <div class="law-summary">Ensures vendors get proper licenses and designated areas to operate legally.</div>
+      <div class="law-status pending">Pending</div>
+    </div>
+
+    <div class="law-card">
+      <div class="law-title">Clean Water Act Amendment</div>
+      <div class="law-summary">Focuses on stricter penalties for polluting local water bodies.</div>
+      <div class="law-status passed">Passed</div>
+    </div>
+
+    <div class="law-card">
+      <div class="law-title">Noise Pollution Control</div>
+      <div class="law-summary">Regulates noise levels in residential areas during night hours.</div>
+      <div class="law-status pending">Pending</div>
+    </div>
+
+    <div class="law-card">
+      <div class="law-title">Public Transport Expansion</div>
+      <div class="law-summary">Plans to expand bus and metro routes to underserved urban neighborhoods.</div>
+      <div class="law-status pending">Pending</div>
+    </div>
+
+    <div class="law-card">
+      <div class="law-title">Women Safety Bill</div>
+      <div class="law-summary">Improves street lighting and surveillance near public spaces for women's safety.</div>
+      <div class="law-status passed">Passed</div>
+    </div>
+  </div>
+  
+
+  <!--  Feedback Section Starts -->
+  <section id="feedback" class="feedback-section">
+    <h2 class="feedback-title">We Value Your Feedback</h2>
+    <form class="feedback-form">
+      <label for="feedback-text">Your Feedback:</label>
+      <textarea id="feedback-text" placeholder="Please share your thoughts here..."></textarea>
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </section>
+  <!--Feedback Section Ends -->
+
+  <script>
+    function login() {
+      alert("Login clicked");
+    }
+
+    function signup() {
+      alert("Sign Up clicked ");
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById("nav-links");
+      menu.classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>

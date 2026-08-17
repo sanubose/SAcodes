@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Shrink</title>
+    <style>
+        #parent {
+            display: flex;
+        }
+
+        #parent div {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+        }
+
+        #parent > div:first-child {
+            background-color: dodgerblue;
+        }
+
+        #parent > div:nth-child(2) {
+            background-color: rgb(112, 138, 216);
+        }
+
+        #parent > div:nth-child(3) {
+            background-color: rgb(112, 216, 188);
+        }
+
+        #parent > div:nth-child(4) {
+            background-color: palevioletred;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+</html>

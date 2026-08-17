@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Platform</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; }
+        header { text-align: center; padding: 20px; }
+        .filters { margin-bottom: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; width: 90%; max-width: 1000px; }
+        .movie-card { border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center; cursor: pointer; transition: transform 0.2s; }
+        .movie-card:hover { transform: scale(1.05); }
+        .pagination { margin-top: 20px; }
+        .pagination button { padding: 10px; margin: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Movie Platform</h1>
+        <input type="text" id="search-box" placeholder="Search movie..." onkeyup="searchMovies()">
+        <div class="filters">
+            <label for="genre-filter">Filter by Genre:</label>
+            <select id="genre-filter" onchange="filterMovies()">
+                <option value="all">All</option>
+                <option value="Drama">Drama</option>
+                <option value="Crime">Crime</option>
+                <option value="Action">Action</option>
+                <option value="Sci-Fi">Sci-Fi</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="grid" id="movie-grid"></div>
+
+    <!-- Pagination Controls -->
+    <div class="pagination">
+        <button onclick="prevPage()">Previous</button>
+        <span id="page-info">Page 1</span>
+        <button onclick="nextPage()">Next</button>
+    </div>
+
+    <script>
+        let movies = [
+            { title: "The Shawshank Redemption", genre: "Drama", release_date: "1994-09-23", rating: 9.3 },
+            { title: "The Godfather", genre: "Crime", release_date: "1972-03-24", rating: 9.2 },
+            { title: "The Dark Knight", genre: "Action", release_date: "2008-07-18", rating: 9.0 },
+            { title: "Inception", genre: "Sci-Fi", release_date: "2010-07-16", rating: 8.8 }
+        ];
+
+        let filteredMovies = movies;
+        let currentPage = 1;
+        let moviesPerPage = 5;
+
+        function renderMovies() {
+            let grid = document.getElementById("movie-grid");
+            grid.innerHTML = "";
+            let start = (currentPage - 1) * moviesPerPage;
+            let end = start + moviesPerPage;
+            let paginatedMovies = filteredMovies.slice(start, end);
+
+            paginatedMovies.forEach(movie => {
+                let card = document.createElement("div");
+                card.className = "movie-card";
+                card.innerHTML = `<h3>${movie.title}</h3><p>Genre: ${movie.genre}</p>`;
+                grid.appendChild(card);
+            });
+
+            document.getElementById("page-info").innerText = `Page ${currentPage}`;
+        }
+
+        function filterMovies() {
+            let genre = document.getElementById("genre-filter").value;
+            filteredMovies = genre === "all" ? movies : movies.filter(m => m.genre === genre);
+            currentPage = 1;
+            renderMovies();
+        }
+
+        function searchMovies() {
+            let query = document.getElementById("search-box").value.toLowerCase();
+            filteredMovies = movies.filter(m => m.title.toLowerCase().includes(query));
+            currentPage = 1;
+            renderMovies();
+        }
+
+        function nextPage() {
+            if (currentPage * moviesPerPage < filteredMovies.length) {
+                currentPage++;
+                renderMovies();
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                renderMovies();
+            }
+        }
+
+        renderMovies();
+    </script>
+</body>
+</html>

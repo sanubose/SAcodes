@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reebok Collaboration</title>
+    <style>
+        body {
+            font-family: Neue-Plak-Regular, sans-serif, -apple-system;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(218, 223, 232);
+
+        }
+
+        /* Header Section */
+        .header {
+           
+            padding: 0;
+            text-align: center;
+        }
+
+        .header img {
+            width: 100%;
+            height: auto;
+        }
+
+        .hero {
+            /* background-color: #f0f0f0;  */
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Collaboration Title & Description */
+        .collaboration-title {
+            font-weight: 200;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .collaboration-description {
+            font-size: 0.9em;
+            /* color: #666; */
+            margin-bottom: 20px;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Navigation */
+        .navigation {
+            
+            margin-bottom: 20px;
+        }
+
+        .navigation a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 15px;
+            font-size: 1.1em;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .product-card {
+            /* background-color: #e0e0e0; */
+            /* border-radius: 10px; */
+            padding: 15px;
+            text-align: center;
+            width: 400px;
+        }
+
+        .product-card img {
+            border-radius: 40px;
+            max-width: 100%;
+            height: auto;
+            /* margin-bottom: 10px; */
+        }
+
+        .product-card h3 {
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        .product-card p {
+            font-size: 0.8em;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .product-card a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9em;
+            display: block;
+        }
+
+
+         /* Botter Collaboration Section */
+        .botter-collaboration {
+            text-align: center;
+            padding: 20px;
+            /* background-color: #fff; */
+            margin-bottom: 20px;
+        }
+
+        .botter-collaboration h2 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .botter-collaboration p {
+            font-size: 0.9em;
+            color: #555;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 2.0;
+        }
+
+      /*  Video Styles */
+        .video-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .video-player {
+            
+            width: 80%; /* Adjust as needed */
+            max-width: 800px; /* Adjust as needed */
+            margin: 0 auto;
+        }
+        
+        /* sliding windwo*/
+        .slider-container {
+            box-sizing: border-box;
+            width: 100%;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+            /* border: 2px solid #ddd; */
+            box-sizing: border-box;
+            /* white-space: nowrap; */
+
+        }
+        .slider {
+            display: flex;
+            width: 100%;
+            animation: scroll 10s linear infinite; /* Continuous scrolling */
+        }
+        .slide {
+            min-width: 20%;
+            text-align: center;
+            /* padding: 10px; */
+        }
+        img {
+            width: 100%;
+            height: auto;
+            /* border-radius: 10px; */
+        }
+        .price {
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+
+
+        /*footer*/
+        .footer-container {
+    background-color: #d6e0e8; /* Match the background color */
+    padding: 30px 0;
+    color: #000; /* Match the text color */
+  }
+
+  .footer-content {
+    max-width: 1200px; /* Or your desired container width */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  /* Column Styling */
+  .footer-column {
+    flex: 1;
+    min-width: 200px;
+    padding: 0 15px;
+  }
+
+  .footer-column h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-column li {
+    margin-bottom: 5px;
+  }
+
+  .footer-column a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  /* Currency Styling */
+  .currency-link {
+      text-decoration: underline;
+  }
+
+  /* Payment Methods Styling */
+  .payment-methods {
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  .payment-methods img {
+    height: 20px; /* Adjust as needed */
+    margin-right: 5px;
+  }
+
+  /* Copyright Styling */
+  .copyright {
+    /* Slightl lighter background for the copyright line*/
+    text-align: left;
+    padding: 20px;
+    font-size: 12px;
+    /* max-width: 1200px; */
+    margin: 0 auto; /* Center the copyright */
+  }
+  .payment-methods-list {
+    margin-top: 10px;
+  }
+  .payment-methods-list img {
+    border-radius: 50%;
+    margin-right: 5px;
+    width: 25px ;
+    height: 25px;
+  }
+
+
+        /* Add responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .product-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-card {
+                width: 80%;
+            }
+
+            .collaboration-description,
+            .botter-collaboration p {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="https://www.reebok.eu/BWStaticContent/153000/102ea3d8-9cbe-4334-af80-58fab6113543_small-hedmayner.jpg" alt="Reebok Logo">
+    </div>
+
+    <div class="hero">
+        
+        <h1 class="collaboration-title">HED MAYNER x REEBOK LTD</h1>
+        <p class="collaboration-description">Hed Mayner's collaboration with Reebok LTD pushes forward, reimagining Reebok's influential archive through experimental materials, unusual proportions, and new silhouettes.</p>
+    </div>
+
+    <div class="navigation">
+        <a href="#">Apparel</a>
+        <a href="#">Footwear</a>
+        <a href="#">Special Projects</a>
+    </div>
+
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="https://www.reebok.eu/BWStaticContent/153000/813aac0a-6c05-43f4-9189-255f5b51e7e4_23358309-desktop.jpg" alt="Hed Mayner X Reebok LTD Parka Utility">
+            <h3>Hed Mayner X Reebok LTD Parka Utility</h3>
+            <a href="#">Shop now</a>
+        </div>
+        <div class="product-card">
+            <img src="https://www.reebok.eu/BWStaticContent/153000/8af83f5e-d962-4e5c-8298-28bf2421b1be_23357135-desktop.jpg" alt="Hed Mayner X Reebok LTD Track Pant">
+            <h3>Hed Mayner X Reebok LTD Track Pant</h3>
+            <a href="#">Shop now</a>
+        </div>
+        <div class="product-card">
+            <img src="https://www.reebok.eu/BWStaticContent/153000/845b63bc-00b4-4918-bdcd-72a32288cb7c_23357138-desktop.jpg" alt="Hed Mayner X Reebok LTD Sneakers Blacktop">
+            <h3>Hed Mayner X Reebok LTD Sneakers Blacktop</h3>
+            <a href="#">Shop now</a>
+        </div>
+    </div>
+
+    <div class="botter-collaboration">
+        <h2>Botter X Reebok LTD</h2>
+        <p>Reebok LTD presents its new Fall/Winter 2024 collaboration with Botter. This new collection is inspired by the vibrant street football scene of Curaçao, capturing the energy of the Caribbean through a design language that merges urban street style with cutting-edge sportswear. The collection also pays homage to Botter's signature water motif, symbolised by striking blue accents that run throughout the range.</p>
+    </div>
+
+
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="https://www.reebok.eu/BWStaticContent/153000/c7f35edf-281d-40b0-9117-cbb4c7e87536_23357139-small.jpg" alt="Reebok x Botter Padded Longsleeve Polo">
+            <h3>Reebok x Botter Padded Longsleeve Polo</h3>
+            <a href="#">Shop now</a>
+        </div>
+        <div class="product-card">
+            <img src="https://www.reebok.eu/BWStaticContent/153000/b3116a06-a121-4301-9811-9d6b6fa413dd_23356334-small.jpg" alt="Reebok x Botter Energia Bo Kéts">
+            <h3>Reebok x Botter Energia Bo Kéts</h3>
+            <a href="#">Shop now</a>
+        </div>
+        <div class="product-card">
+            <img src="https://www.reebok.eu/BWStaticContent/153000/d36fed34-e0ad-447c-9aff-05723d7497ff_23356330-small.jpg" alt="Reebok x Botter Paneled Cap">
+            <h3>HReebok x Botter Paneled Cap</h3>
+            <a href="#">Shop now</a>
+        </div>
+    </div>
+     
+
+    <div class="botter-collaboration">
+        <h2>Botter X Reebok LTD</h2>
+        <p>The iconic Premier Road series continues its evolution with the Premier Road Ultra from Reebok LTD. Archival materials and a Y2K aesthetic reference Reebok’s rich heritage while creating a design narrative that looks to the future.</p>
+    </div>
+
+
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="https://www.reebok.eu/BWStaticContent/153000/071a01d9-0aeb-466c-80dc-a1e7c80d20fa_ecom-prod-1-3-small.jpg" alt="Premier Road Ultra Sneakers">
+            <h3>Premier Road Ultra Sneakers</h3>
+            <a href="#">Shop now</a>
+        </div>
+        <div class="product-card">
+            <img src="https://www.reebok.eu/BWStaticContent/153000/9c663cce-07ec-4dd0-b9ce-05b630d0ef2e_ecom-prod-1-3-small.jpg" alt="Premier Road Ultra Sneakers">
+            <h3>Premier Road Ultra Sneakers</h3>
+            <a href="#">Shop now</a>
+        </div>
+        <div class="product-card">
+            <img src="https://www.reebok.eu/BWStaticContent/153000/2de8cd1c-18bd-4283-a118-6c80ce92ed6f_ecom-prod-1-3-small.jpg" alt="Premier Road Ultra Sneakers">
+            <h3>Premier Road Ultra Sneakers</h3>
+            <a href="#">Shop now</a>
+        </div>
+    </div>
+
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="https://www.reebok.eu/BWStaticContent/153000/9c663cce-07ec-4dd0-b9ce-05b630d0ef2e_ecom-prod-1-3-small.jpg" alt="Premier Road Ultra Sneakers">
+            <h3>Premier Road Ultra Sneakers</h3>
+            <a href="#">Shop now</a>
+        </div>
+        <div class="product-card">
+            <img src="https://www.reebok.eu/BWStaticContent/153000/0dc4583c-89b6-44da-bcac-aacd3578e3b3_ecom-prod-1-3-small.jpg" alt="Premier Road Ultra Sneakers">
+            <h3>Premier Road Ultra Sneakers</h3>
+            <a href="#">Shop now</a>
+        </div>
+        <div class="product-card">
+            <img src="https://www.reebok.eu/BWStaticContent/153000/8810d525-ed01-45f8-a2e1-ed2f7888764c_ecom-prod-1-3-small.jpg" alt="Premier Road Ultra Sneakers">
+            <h3>Premier Road Ultra Sneakers</h3>
+            <a href="#">Shop now</a>
+        </div>
+    </div>
+
+    <!--video add here-->
+    <div class="video-container">
+        <div class="video-player">
+            <video controls width="100%">
+                <source src="https://www.reebok.eu/BWStaticContent/153000/b3c472b9-41e7-4384-8fe7-073656ce5e67_premier-road-ultra-website.mp4#t=0.001" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+
+    <!--silder-->
+
+    <div class="slider-container" id="sliderContainer">
+        <div class="slider" id="slider">
+            <!-- Duplicate Images for Seamless Transition -->
+            <div class="slide"><img src="https://images.reebok.eu/reebok-ltd-premier-road-ultra-sneakers_23358300_54049067_1000.jpg"><p class="price">Premier Road Ultra Sneakers<br/>Unisex Lifestyle Shoes<br/>£150</p></div>
+            <div class="slide"><img src="https://images.reebok.eu/reebok-ltd-premier-road-ultra-sneakers_23356324_55654125_300.jpg"><p class="price">Premier Road Ultra<br/>Unisex Lifestyle Shoes<br/>£150</p></div>
+            <div class="slide"><img src="https://images.reebok.eu/reebok-ltd-premier-road-ultra_23357121_54089771_300.jpg"><p class="price">Premier Road Ultra Sneakers<br/>Unisex Lifestyle Shoes<br/>£150</p></div>
+            <div class="slide"><img src="https://images.reebok.eu/reebok-ltd-premier-road-ultra-sneakers_23356323_55654154_300.jpg"><p class="price">Premier Road Ultra Sneakers<br/>Unisex Lifestyle Shoes<br/>£145</p></div>
+    
+            <!-- Duplicate for Infinite Loop -->
+            <div class="slide"><img src="https://images.reebok.eu/reebok-ltd-premier-road-ultra-sneakers_23358300_54049067_1000.jpg"><p class="price">Premier Road Ultra Sneakers<br/>Unisex Lifestyle Shoes<br/>£145</p></div>
+            <div class="slide"><img src="https://images.reebok.eu/reebok-ltd-premier-road-ultra-sneakers_23356324_55654125_300.jpg"><p class="price">Premier Road Ultra Sneakers<br/>Unisex Lifestyle Shoes<br/>£150</p></div>
+            <div class="slide"><img src="https://images.reebok.eu/reebok-ltd-premier-road-ultra_23357121_54089771_300.jpg"><p class="price">Premier Road Ultra Sneakers<br/>Unisex Lifestyle Shoes<br/>£150</p></div>
+            <div class="slide"><img src="https://images.reebok.eu/reebok-ltd-premier-road-ultra-sneakers_23356323_55654154_300.jpg"><p class="price">Premier Road Ultra Sneakers<br/>Unisex Lifestyle Shoes<br/>£145</p></div>
+        </div>
+    </div>
+    
+<!--footer yha se-->
+
+<div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h4>SUPPORT</h4>
+        <ul>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Track your order</a></li>
+          <li><a href="#">Return your order</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>LEGAL</h4>
+        <ul>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#">Cookie Preferences</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>COUNTRY/CURRENCY</h4>
+        <p>United Kingdom / £ <a href="#" class="currency-link">Change</a></p>
+
+        <div class="payment-methods">
+          <h4>PAYMENT METHODS</h4>
+          <div class="payment-methods-list">
+            <img src="data:image/png;base64,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" alt="American Express">
+            <img src="https://www.svgrepo.com/show/328114/diners.svg" alt="Discover">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/JCB_logo.svg/450px-JCB_logo.svg.png?20160827145146" alt="JCB">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Maestro_logo.svg/189px-Maestro_logo.svg.png?20171129173514" alt="Maestro">
+            <img src="https://imageio.forbes.com/blogs-images/steveolenski/files/2016/07/Mastercard_new_logo-1200x865.jpg?format=jpg&height=600&width=1200&fit=bounds" alt="Mastercard">
+            <img src="https://purepng.com/public/uploads/large/purepng.com-visa-logologobrand-logoiconslogos-251519938794uqvcz.png" alt="Visa">
+            <br>
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968601.png" alt="Apple Pay">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeyP_0YtjGAPJnOyzHmO-qQ82oXl_v4nIoFw&s" alt="PayPal">
+            <img src="https://brandlogos.net/wp-content/uploads/2020/11/klarna-logo.png" alt="Klarna">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="copyright">
+    Reebok™ is a trademark of Reebok International Limited. ©2023 Reebok International Limited. All Rights Reserved.
+  </div>
+
+
+
+    <script>
+        let slider = document.getElementById("slider");
+        let sliderContainer = document.getElementById("sliderContainer");
+    
+        let position = 0;
+        let speed = 0.5; // Smooth move speed
+        let isMoving = false;
+        let animationFrame;
+    
+        function moveSlider() {
+            if (isMoving) {
+                position -= speed;
+                slider.style.transform = `translateX(${position}px)`;
+    
+                let firstSlide = slider.firstElementChild;
+                if (Math.abs(position) >= firstSlide.offsetWidth) {
+                    position += firstSlide.offsetWidth; 
+                    slider.appendChild(firstSlide);
+                }
+            }
+            animationFrame = requestAnimationFrame(moveSlider);
+        }
+    
+        sliderContainer.addEventListener("mouseenter", () => {
+            isMoving = true;
+        });
+    
+        sliderContainer.addEventListener("mouseleave", () => {
+            isMoving = false;
+        });
+    
+        moveSlider();
+    </script>
+    
+
+
+</body>
+</html>

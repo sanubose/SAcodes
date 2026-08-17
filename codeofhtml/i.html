@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindi Voice AI</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: none;
+    background: #28a745;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background: #218838;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hindi Voice AI</h1>
+        <input type="file" id="audioInput" accept="audio/*">
+        <button onclick="processAudio()">Upload & Process</button>
+        <p id="response"></p>
+    </div>
+    <script>
+ function processAudio() {
+    let input = document.getElementById("audioInput");
+    let response = document.getElementById("response");
+    
+    if (input.files.length === 0) {
+        response.innerText = "Please upload an audio file!";
+        return;
+    }
+    
+    response.innerText = "Processing audio...";
+    
+    setTimeout(() => {
+        response.innerText = "Response: Namaste! Aap kya janana chahenge?";
+    }, 2000);
+}
+
+
+    </script>
+</body>
+</html>
+

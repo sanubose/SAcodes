@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM11</title>
+</head>
+<body>
+    <h1 id="main">I am SANU</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio illum fugit vel distinctio maxime expedita beatae, laudantium omnis officiis quaerat, ipsa similique doloribus hic fugiat quibusdam iure fuga autem sunt.
+    Sint nihil provident doloribus et earum? Fugiat hic quos alias voluptatibus corrupti qui vitae nihil voluptates ipsam! Debitis quos voluptatum dolorem et architecto soluta excepturi provident quae, eligendi, sunt laboriosam?
+    Maxime nemo quos voluptate eveniet, tempora voluptatem eligendi sequi nulla. Veritatis, velit ducimus doloribus doloremque natus, nam illum consequatur commodi quasi dolor odio tempore consectetur pariatur saepe, non voluptates obcaecati!
+    Veniam eaque molestiae fuga nostrum suscipit ab earum temporibus numquam voluptas natus ipsam eos, corrupti facere reprehenderit porro magnam qui quasi, quis maiores explicabo velit quas. Similique quos maiores minus!
+    Nobis error, soluta, distinctio, autem illum eveniet repudiandae veniam ut voluptatibus sequi id unde blanditiis aliquam nihil? Explicabo laborum porro est tempora, laboriosam voluptates fuga eum perspiciatis velit quo enim?
+    Dolores, fugit? Omnis deserunt vero, consequuntur harum fuga voluptate totam odit aliquid quod. Voluptates maiores reprehenderit, rerum commodi saepe, esse fugiat perspiciatis quidem eveniet eius, amet itaque tempore. Corporis, non?
+    Accusamus quasi voluptas nulla a saepe ullam officiis sapiente rem et ad. Tempora eligendi omnis voluptas vitae quasi animi maxime illum! Dolore praesentium maiores consequuntur sunt explicabo minima tenetur quas.
+    Facilis reiciendis repellat molestiae voluptatum ipsa accusamus obcaecati. Error rerum numquam veritatis, quos deleniti fuga iste voluptatum tenetur rem vel quod tempore distinctio dolores explicabo est nobis? Error, non nam?
+    Cum alias labore at, quidem deserunt, tempore autem iste pariatur ipsa voluptate eligendi quibusdam aliquid adipisci dolore voluptatem reiciendis nostrum debitis vitae earum? Alias ad pariatur, illum officia velit totam.
+    Repellendus ea dolore vel omnis quod veniam quam, eaque quas nobis architecto est, veritatis dolor incidunt labore sit deleniti maiores adipisci! Dolores fugiat tempore assumenda natus perspiciatis? Repellendus, at reiciendis.</p>
+
+    <p>eaque molestiae fuga nostrum suscipit ab earum temporibus numquam voluptas natus ipsam eos, corrupti facere reprehenderit porro magnam qui quasi, quis maiores explicabo velit quas. Similique quos maiores minus!
+        Nobis error, soluta, distinctio, autem illum eveniet repudiandae veniam ut voluptatibus sequi id unde blanditiis aliquam nihil? Explicabo laborum porro est tempora, laboriosam voluptates fuga eum perspiciatis velit quo enim?
+        Dolores, fugit? Omnis deserunt vero, consequuntur harum fuga voluptate totam odit aliquid quod. Voluptates maiores reprehenderit, rerum commodi saepe, esse fugiat perspiciatis quidem eveniet eius, amet itaque tempore. Corporis, non?
+        Accusamus quasi voluptas nulla a saepe ullam officiis sapiente rem et ad. Tempora eligendi omnis voluptas vitae quasi animi maxime illum! Dolore praesentium maiores consequuntur sunt explicabo minima tenetur quas.
+        Facilis reiciendis </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio illum fugit vel distinctio maxime expedita beatae, laudantium omnis officiis quaerat, ipsa similique doloribus hic fugiat quibusdam iure fuga autem sunt.
+    Sint nihil provident doloribus et earum? Fugiat hic quos alias voluptatibus corrupti qui vitae nihil voluptates ipsam! Debitis quos voluptatum dolorem et architecto soluta excepturi provident quae, eligendi, sunt laboriosam?
+    Maxime nemo quos voluptate eveniet, tempora voluptatem eligendi sequi nulla. Veritatis, velit ducimus doloribus doloremque natus, nam illum consequatur commodi quasi dolor odio tempore consectetur pariatur saepe, non voluptates obcaecati!
+    Veniam eaque molestiae fuga nostrum suscipit ab earum temporibus numquam voluptas natus ipsam eos, corrupti facere reprehenderit porro magnam qui quasi, quis maiores explicabo velit quas. Similique quos maiores minus!
+    Nobis error, soluta, distinctio, autem illum eveniet repudiandae veniam ut voluptatibus sequi id unde blanditiis aliquam nihil? Explicabo laborum porro est tempora, laboriosam voluptates fuga eum perspiciatis velit quo enim?
+    Dolores, fugit? 
+    </p>
+
+
+    <div class="container">
+        this is Dom assignement there we are sloving question of DOM assignment and working on this 
+
+    </div>
+
+
+
+    <script>
+        // 1.  <h1> element by its id and change its text content
+          var h1Element = document.getElementById('main');
+          h1Element.textContent = "Welcome to the DOM World!";
+  
+           // 2. Select all <p> elements and set their text color to blue
+              var pElements = document.getElementsByTagName('p');
+          for (let i = 0; i < pElements.length; i++) {
+              pElements[i].style.color = 'blue';
+          }
+          // div section make yellow
+          const containerDiv = document.querySelector('.container');
+          containerDiv.style.backgroundColor = 'yellow';
+  </script>
+</body>
+</html>

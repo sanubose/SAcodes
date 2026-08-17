@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notifications | DemocracyHub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+        color: #ffffff;
+      /* background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px; */
+      font-family: 'Inter', sans-serif;
+    
+      padding: 30px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #1a5f70;
+    }
+
+    .notifications-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .notification-card {
+      background-color: #ffffff;
+      border-left: 5px solid #00adb5;
+      padding: 15px 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .notification-card h4 {
+      margin-bottom: 5px;
+      color: #1a1a2e;
+    }
+
+    .notification-card p {
+      color: #444;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📢 Latest Issues in Your Area</h2>
+  <div class="notifications-container" id="notifications">
+    <!-- Notifications will be added here -->
+  </div>
+
+  <script>
+    const notifications = [
+      { title: "Water Supply Disruption", message: "Water supply will be off in Sector 12 from 10 AM to 4 PM." },
+      { title: "Power Outage", message: "Scheduled power cut in Block C from 6 PM to 8 PM." },
+      { title: "Garbage Collection Delay", message: "Today's garbage pickup will be delayed by 2 hours." },
+      { title: "New Law Introduced", message: "Plastic ban enforced in market areas starting next week." },
+      { title: "Pothole Complaint Addressed", message: "Potholes near Main Street have been fixed today." },
+      { title: "Road Construction", message: "New flyover construction starts from Monday, expect traffic." },
+    ];
+
+    let index = 0;
+
+    function addNotification() {
+      const container = document.getElementById("notifications");
+      const note = notifications[index % notifications.length];
+
+      const card = document.createElement("div");
+      card.className = "notification-card";
+
+      card.innerHTML = `<h4>${note.title}</h4><p>${note.message}</p>`;
+      container.prepend(card);
+
+      index++;
+    }
+
+    addNotification();
+    setInterval(addNotification, 5000);
+  </script>
+
+</body>
+</html>

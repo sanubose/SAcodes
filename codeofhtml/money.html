@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoneyPulse Budget 2025</title>
+    
+    <link rel="shortcut icon" href="./imgs/MoneyPulse-Logo.png" type="image/x-icon">
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  /* margin: 0; */
+  padding: 0;
+  text-align: center;
+  /* margin: auto;
+  width: 80vh; */
+}
+
+.top-banner {
+  background: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.logo img {
+  height: 30px;
+}
+
+.title h1 {
+  color: #1a7b34;
+  font-size: 26px;
+  margin: 0;
+}
+
+.rupee {
+  color: blue;
+}
+
+.year {
+  font-size: 20px;
+}
+
+.sponsors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+
+.co-presented,
+.associated {
+  margin: 0 20px;
+}
+
+.co-presented img,
+.associated .logos img {
+  height: 60px;
+  margin: 5px;
+
+}
+
+.associated .logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  background: #f8f8f8;
+}
+
+.menu button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.language select,
+.specials button,
+.right-menu button {
+  border: none;
+  background: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  width: 200px;
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.ad-free {
+  color: orange;
+}
+
+.footer {
+  padding: 10px;
+  background: white;
+}
+
+.footer img {
+  height: 180px;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+.footer a {
+  color: orange;
+  text-decoration: none;
+}
+
+
+
+
+.navbar {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 30px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 20px;
+}
+
+.pro-badge {
+  background: #f7931e;
+  color: white;
+  font-weight: bold;
+  padding: 3px 6px;
+  border-radius: 3px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  margin: 0;
+  padding: 5px 0;
+  font-size: 14px;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.extra-links {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  margin: 0;
+  padding: 5px 0;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.budget {
+  background: #3fbf57;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.highlight {
+  color: #0070ff;
+  font-weight: bold;
+}
+
+.picks {
+  color: #e94f37;
+}
+
+.banner {
+  background: black;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.premium {
+  background: gold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.loan-text {
+  font-size: 20px;
+}
+
+.apply-btn {
+  background: white;
+  color: black;
+  border: none;
+  padding: 8px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+
+
+
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.grid-item {
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.grid-item:hover {
+  transform: scale(1.05);
+}
+
+p {
+  font-size: 14px;
+  color: #333;
+}
+
+
+
+
+.container1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.section1 {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+} */
+
+li {
+  cursor: pointer;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  transition: color 0.3s;
+}
+
+li:hover {
+  color: #007BFF;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+.advisory {
+  background-color: #ffdddd;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #d00;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 10px 20px;
+  color: white;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.money {
+  background-color: green;
+  color: white;
+  padding: 5px 10px;
+}
+
+.control {
+  background-color: blue;
+  color: white;
+  padding: 5px 10px;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons span{
+  color: white;
+  font-weight: bold;
+}
+
+.social-icons .icons {
+  margin-left: 10px;
+}
+
+.stocks {
+  background-color: white;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.stock-letters {
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+  margin-left: 60px;
+  font-size: 30px;
+}
+
+.stock-letters button {
+  background-color: #E9ECF0;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.content {
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.section {
+  margin-bottom: 15px;
+}
+
+.section h3 {
+  margin: 0;
+  font-size: 30px;
+  color: black;
+  margin-right: 400px;
+}
+
+.section p {
+  color: #666;
+  font-size: 20px;
+}
+
+.new {
+  background-color: blue;
+  color: white;
+  padding: 2px 5px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+.dotted-line {
+  border: none;
+  border-bottom: 1px dashed #B4B4B4;
+  width: 100%;
+}
+
+
+
+
+.footer1 {
+  background-color: #f1f1f1;
+  padding: 15px;
+  text-align: center;
+}
+
+.footer1 .apps {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  gap: 15px;
+  margin-bottom: 10px;
+  margin-right: 400px;
+}
+
+.footer1 .apps span{
+  font-size: 30px;
+  color: black;
+  font-weight: bold;
+}
+
+.footer1 .apps img {
+  height: 50px;
+  margin-top: 10px;
+}
+
+.footer1 .copyright {
+  font-size: 15px;
+  color: #666;
+  max-width: 80%;
+  margin: auto;
+}
+
+.footer1 .divider {
+  border-top: 1px solid #ccc;
+  margin: 10px auto;
+  max-width: 90%;
+}
+
+.footer1 .iso-cert {
+  text-align: right;
+  padding-right: 20px;
+  margin-bottom: 15px; 
+  margin-top: -60px;
+}
+
+.footer1 .iso-cert img {
+  height: 70px;
+  /* margin-bottom: 15px; */
+}
+
+#marketData{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0px 15px;
+  height: 40px;
+  border-bottom: 1px solid lightgrey;
+}
+
+#marketData p{
+  display: inline-block;
+  font-size: 12px;
+}
+
+.newsAndCharts {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.news {
+    /* border: 1px solid black; */
+    padding: 10px;
+}
+
+#news-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px 0px;
+}
+
+.companyStocks {
+    height: 240px;
+    overflow-y: scroll;
+}
+
+#stocks-chart, #gainers-chart, #losers-chart {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#stocks-chart th, #stocks-chart td, #gainers-chart th, #gainers-chart td, #losers-chart th, #losers-chart td {
+    padding: 10px;
+    text-align: left;
+}
+
+#stocks-chart th, #gainers-chart th, #losers-chart th {
+    position: sticky;
+    top: 0;
+    background-color: #f1f1f1;
+    z-index: 1;
+}
+
+#stocks-chart tr, #gainers-chart tr, #losers-chart tr {
+    margin-bottom: 10px;
+}
+
+#commodities-chart, #curr-chart{
+  border-collapse: collapse;
+    width: 100%;
+}
+
+#curr-chart th, #curr-chart td{
+  padding: 10px;
+  text-align: left;
+}
+
+#commodities-chart th, #commodities-chart td{
+  padding: 10px;
+  text-align: left;
+}
+
+#commodities-chart th, #curr-chart th{
+  position: sticky;
+  top: 0;
+  background-color: #f1f1f1;
+  z-index: 1;
+}
+
+#commodities-chart tr, #curr-chart tr{
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <header class="top-banner">
+        <div class="logo">
+            <img src="https://images.moneycontrol.com/mcnews/images/budget-2025.svg" alt="MoneyControl Logo">
+        </div>
+        <div class="title">
+            <h1>The Booster <span class="rupee">₹</span> BUDGET <span class="year">2025</span></h1>
+        </div>
+    </header>
+
+    <section class="sponsors">
+        <div class="co-presented">
+            <p>CO-PRESENTED BY</p>
+            <img src="https://images.moneycontrol.com/mcnews/images/budget-2025.svg" alt="MoneyControl Logo">
+            <img src="https://images.moneycontrol.com/assets-feeds/images/LIC_130x53_cc9edcf215/LIC_130x53_cc9edcf215.png"
+                alt="LIC Logo">
+        </div>
+        <div class="associated">
+            <p>ASSOCIATED BY</p>
+            <div class="logos">
+
+                <img src="https://images.moneycontrol.com/assets-feeds/images/Logo_80x53_Svg_9d25482068/Logo_80x53_Svg_9d25482068.svg"
+                    alt="Hettich">
+                <img src="https://images.moneycontrol.com/assets-feeds/images/Angel_One_Logo_2213500483/Angel_One_Logo_2213500483.svg"
+                    alt="Angel One">
+                <img src="https://images.moneycontrol.com/assets-feeds/images/Alvius_100x62_Without_Border_89675199dc/Alvius_100x62_Without_Border_89675199dc.svg"
+                    alt="Alivus Life Sciences">
+                <img src="https://images.moneycontrol.com/assets-feeds/images/Coin_DCX_100x62_1_91c3bcbf34/Coin_DCX_100x62_1_91c3bcbf34.png"
+                    alt="CoinDCX">
+                <img src="https://images.moneycontrol.com/assets-feeds/images/Toshiba_100x50_1_306ad454bc/Toshiba_100x50_1_306ad454bc.svg"
+                    alt="Toshiba">
+                <img src="https://images.moneycontrol.com/assets-feeds/images/SBI_100x50_English_White_2118c63d9a/SBI_100x50_English_White_2118c63d9a.svg"
+                    alt="SBI">
+            </div>
+        </div>
+    </section>
+
+    <nav class="navigation">
+        <div class="menu">
+            <button>☰</button>
+        </div>
+        <div class="language">
+            <select>
+                <option>English</option>
+            </select>
+        </div>
+        <div class="specials">
+            <button>Specials ▼</button>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search Quotes, News, Mutual Fund NAVs">
+            <button>🔍</button>
+        </div>
+        <div class="right-menu">
+            <button>My Alerts</button>
+            <button class="ad-free">Go Ad-Free</button>
+            <button>Hello, Login</button>
+        </div>
+    </nav>
+
+    <footer class="footer">
+        <img src="./imgs/MoneyPulse-Logo.png"
+            alt="MoneyControl Logo">
+        <p><a href="#">Go PRO @ ₹99</a></p>
+    </footer>
+
+
+
+    <header>
+        <nav class="navbar">
+            <div class="nav-left">
+                <span class="logo">🏠</span>
+                <span class="pro-badge">PRO</span>
+                <ul class="nav-links">
+                    <li>Markets ▼</li>
+                    <li>News ▼</li>
+                    <li>Delhi Elections</li>
+                    <li><span class="budget">Budget 2025</span></li>
+                    <li>Tech</li>
+                    <li>India</li>
+                    <li>Portfolio</li>
+                    <li>Watchlist</li>
+                    <li>Commodities</li>
+                    <li>MF ▼</li>
+                    <li>Personal Finance ▼</li>
+                    <li>Forum ▼</li>
+                    <li>Videos ▼</li>
+                    <li>Invest Now ▼</li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <ul class="extra-links">
+                    <li>Delhi Elections</li>
+                    <li>Web Stories</li>
+                    <li>MF Simplified</li>
+                    <li>Real Estate</li>
+                    <li><span class="highlight">Lifetime Free</span></li>
+                    <li>Credit Score</li>
+                    <li>Mega Options Festival</li>
+                    <li>IPO</li>
+                    <li>by SEBI's RIA</li>
+                    <li class="picks">#Research Picks</li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="banner">
+        <span class="premium">PREMIUM UPGRADE</span>
+        <span class="loan-text">BIGGER LOAN UP TO <b>50 LAKHS</b></span>
+        <button class="apply-btn">Apply now</button>
+    </div>
+
+    <div id="marketData"></div>
+
+    <section class="newsAndCharts">
+      <div id="news-section"></div>
+      <div id="charts">
+        <h3>Today's Market</h3>
+        <div class="companyStocks">
+          <table id="stocks-chart">
+            <thead>
+              <tr>
+                <th>Company</th>
+                <th>Price</th>
+                <th>Change</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Table rows will be appended here -->
+            </tbody>
+          </table>
+        </div>
+        <h3>Top Gainers</h3>
+        <div class="top-gainers">
+          <table id="gainers-chart">
+            <thead>
+              <tr>
+                <th>Company</th>
+                <th>Price</th>
+                <th>Change</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Table rows will be appended here -->
+            </tbody>
+          </table>
+        </div>
+        <h3>Top Losers</h3>
+        <div class="top-losers">
+          <table id="losers-chart">
+            <thead>
+              <tr>
+                <th>Company</th>
+                <th>Price</th>
+                <th>Change</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Table rows will be appended here -->
+            </tbody>
+          </table>
+        </div>
+        <h3>Commodities</h3>
+        <div class="commodities">
+          <table id="commodities-chart">
+            <thead>
+              <tr>
+                <th>Commodity</th>
+                <th>Price</th>
+                <th>Change</th>
+                <th>%Ch</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Table rows will be appended here -->
+            </tbody>
+          </table>
+        </div>
+        <h3>Currencies</h3>
+        <div class="forex">
+          <table id="curr-chart">
+            <thead>
+              <tr>
+                <th>Currency</th>
+                <th>Rate</th>
+                <th>Change</th>
+                <th>% Change</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Table rows will be appended here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <div class="container1">
+        <!-- MARKET Section -->
+        <div class="section1">
+            <h2>MARKET</h2>
+            <img src="https://images.moneycontrol.com/static-mcnews/2025/02/20250208040748_Sensex_up_higher.jpg?impolicy=website&width=206&height=116" alt="Market">
+            <ul>
+                <li onclick="openArticle('market1.html')">These smallcaps have surged up to 26% as broader indices see
+                    muted gains</li>
+                <li onclick="openArticle('market2.html')">Daily Voice: Ashika Global's Amit Jain cautious about Nifty
+                    crossing 27,000 in 2025</li>
+                <li onclick="openArticle('market3.html')">Sensex plunges 850 pts from day's high post-rate cut</li>
+            </ul>
+            <button onclick="openArticle('market.html')">+ See More Market</button>
+        </div>
+
+        <!-- STOCKS Section -->
+        <div class="section1">
+            <h2>STOCKS</h2>
+            <img src="https://images.moneycontrol.com/static-mcnews/2025/02/20250208040748_Sensex_up_higher.jpg?impolicy=website&width=206&height=116" alt="Stocks">
+            <ul>
+                <li onclick="openArticle('stocks1.html')">3M India posts smaller third-quarter profit</li>
+                <li onclick="openArticle('stocks2.html')">Top gainers and losers today: Stocks that moved</li>
+                <li onclick="openArticle('stocks3.html')">Neutral TCI Express; target of Rs 785</li>
+            </ul>
+            <button onclick="openArticle('stocks.html')">+ See More Stocks</button>
+        </div>
+
+        <!-- COMMODITIES Section -->
+        <div class="section1">
+            <h2>COMMODITIES</h2>
+            <img src="https://images.moneycontrol.com/static-mcnews/2024/08/20240814034453_commodities_1.jpg?impolicy=website&width=206&height=116" alt="Commodities">
+            <ul>
+                <li onclick="openArticle('commodities1.html')">Agri Picks Report February 07, 2025</li>
+                <li onclick="openArticle('commodities2.html')">Agri Picks Report February 06, 2025</li>
+                <li onclick="openArticle('commodities3.html')">Agri Picks Report February 05, 2025</li>
+            </ul>
+            <button onclick="openArticle('commodities.html')">+ See More Commodities</button>
+        </div>
+
+        <!-- STARTUPS Section -->
+        <div class="section1">
+            <h2>STARTUPS</h2>
+            <img src="https://images.moneycontrol.com/static-mcnews/2021/12/Startup-1-378x213.jpg?impolicy=website&width=206&height=116" alt="Startups">
+            <ul>
+                <li onclick="openArticle('startups1.html')">Union Budget 2025: start-up expectations and reality</li>
+                <li onclick="openArticle('startups2.html')">Accel, Bessemer, Prosus representatives exit The Good Glamm
+                    Group's board</li>
+                <li onclick="openArticle('startups3.html')">Ankit Nagori’s Curefoods begins work on IPO</li>
+            </ul>
+            <button onclick="openArticle('startups.html')">+ See More Startups</button>
+        </div>
+    </div>
+
+
+
+
+    <div class="grid-container">
+        <div class="grid-item" data-url="pages/page1.html">
+            <img src="https://images.moneycontrol.com/static-mcnews/2025/02/20250208060341_PM-Modi-rally-PTI-photo.jpg?impolicy=website&width=320&height=180"
+                alt="Designer Handbags">
+            <p><strong>Arvind Kejriwal Election Result Live:</strong> Arvind Kejriwal trails behind BJP's Parvesh Verma
+                by !844 vots in New Delhi</p>
+        </div>
+        <div class="grid-item" data-url="pages/page2.html">
+            <img src="https://images.moneycontrol.com/static-mcnews/2019/05/rahul-gandhi-lok-sabha-elections-2019.jpg?impolicy=website&width=330&height=168"
+                alt="Villas in Dubai">
+            <p><strong>Delho polls:</strong> Congress is third time "unlucky". Factors that may have led to yet another
+                wipeout</p>
+        </div>
+        <div class="grid-item" data-url="pages/page3.html">
+            <img src="https://images.moneycontrol.com/static-mcnews/2024/09/20240924063037_sleep-better.jpg?impolicy=website&width=510&height=288"
+                alt="Blind Husband">
+            <p><strong>Mental welness:</strong> Reduce stress, improve mental helath with these 6 daily habits</p>
+        </div>
+        <div class="grid-item" data-url="pages/page4.html">
+            <img src="https://images.moneycontrol.com/static-mcnews/2025/02/20250207135036_NEET-UG-2025-Registration-Begins.png?impolicy=website&width=510&height=288"
+                alt="Cat with Matted Fur">
+            <p><strong>Neet UG 2025 Registration Begins:</strong> Exam on MAy 4, Apply by March; direct link here</p>
+        </div>
+        <div class="grid-item" data-url="pages/page5.html">
+            <img src="https://images.moneycontrol.com/static-mcnews/2024/12/20241230200531_Wordle-Dec-31.png?impolicy=website&width=214&height=120"
+                alt="Truck Driver">
+            <p><strong>Kingdom Come Deliverance 2: </strong>What your PC needs to play the game</p>
+        </div>
+        <div class="grid-item" data-url="pages/page6.html">
+            <img src="https://images.moneycontrol.com/static-mcnews/2025/02/20250207043433_RBI-Governor-Sanjay-Malhotra-AFP.jpg?impolicy=website&width=214&height=120"
+                alt="Tennis Player">
+            <p><strong>Explained: </strong> What the RBI rate cut means for fixed income investors</p>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="advisory">
+        <p><strong>Advisory Alert:</strong> It has come to our attention that certain individuals are representing
+            themselves as affiliates of Moneycontrol and soliciting funds on the false promise of assurance.</p>
+    </div>
+
+    <header>
+        <div class="logo">
+            <span class="money">money</span><span class="control">control</span>
+        </div>
+        <div class="social-icons">
+            <span>Follow Us On:</span>
+            <div class="icons">
+                <span>🔵</span> <span>⚫</span> <span>📷</span> <span>🔗</span> <span>✈</span> <span>🔊</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="stocks">
+        <strong>Stocks:</strong>
+        <div class="stock-letters">
+            <!-- A B C D E F G H I J K L M N O P Q R S T U V W X Y Z <button>Others</button> -->
+            <button>A</button><button>B</button>
+            <button>C</button><button>D</button><button>E</button><button>F</button>
+            <button>G</button><button>H</button><button>I</button><button>J</button><button>K</button><button>L</button>
+            <button>M</button><button>N</button><button>O</button><button>P</button><button>Q</button><button>R</button>
+            <button>S</button><button>T</button><button>U</button><button>V</button><button>W</button>
+            <button>X</button><button>Y</button><button>Z</button><button>Others</button>
+        </div>
+    </div>
+
+    <div class="content">
+        <hr class="dotted-line">
+        <div class="section">
+            <h3>Trending Topics</h3>
+            <p>Sensex Today | Zomato Name Change | IND Vs ENG Live Score
+                | Breaking News Live<button>More</button></p>
+        </div>
+
+        <hr class="dotted-line">
+        <div class="section">
+            <h3>News</h3>
+            <p>Business | Budget 2025 | Markets | Stocks | India News | Economy | Mutual Funds | Personal Finance | IPO
+                News </p>
+        </div>
+
+        <hr class="dotted-line">
+        <div class="section">
+            <h3>Markets</h3>
+            <p>Home | Currencies | Commodities | Pre-Market | IPO | Global Market</p>
+        </div>
+
+        <hr class="dotted-line">
+        <div class="section">
+            <h3>Personal Finance</h3>
+            <p>Home | Loans Up To 50 Lakhs | Credit Cards Lifetime Free | <span class="new">Finance Tracker</span> |
+                <span class="new">Fixed Deposits</span> | Fixed Income
+            </p>
+        </div>
+
+        <hr class="dotted-line">
+        <div class="section">
+            <h3>Mutual Funds</h3>
+            <p>Home | MC 30 | Top Ranked Funds | ETFs | Mutual Fund Screener</p>
+        </div>
+
+        <hr class="dotted-line">
+        <div class="section">
+            <h3>Tools</h3>
+            <p>Income tax Calculator | EMI Calculator | Retirement Planning | Gratuity Calculator</p>
+        </div>
+
+        <hr class="dotted-line">
+        <div class="section">
+            <h3>Community</h3>
+            <p>Stocks Markets</p>
+        </div>
+
+        <hr class="dotted-line">
+        <div class="section">
+            <h3>Network 18 Sites</h3>
+            <p>News18 | Firstpost | CNBC TV18 | News18 Hindi | Cricketnext | Overdrive | Topper Learning</p>
+        </div>
+
+        <hr class="dotted-line">
+        <div class="section">
+            <h3>Quick Links</h3>
+            <p>About Us | Contact Us | Adviosry Alert | Advertise With Us | Support | Disclaimer | Privacy Policy</p>
+        </div>
+    </div>
+    <hr class="dotted-line">
+
+
+
+
+    <div class="footer1">
+        <div class="apps">
+            <span>Download MC Apps:</span>
+            <img src="https://images.moneycontrol.com/mcnews/images/footer/googlestore.png" alt="Google Play">
+            <img src="https://images.moneycontrol.com/mcnews/images/footer/appstore.png" alt="App Store">
+        </div>
+
+        <div class="iso-cert">
+            <img src="https://images.moneycontrol.com/mcnews/images/footer/bsi.png" alt="ISO Certification">
+        </div>
+
+        <div class="divider"></div>
+        <div class="copyright">
+            Copyright © MoneyPulse - Masai School Construct Week Project
+        </div>
+
+    </div>
+
+
+
+
+
+    <script>
+//         function openArticle(url) {
+//   window.open(url, "_blank");
+// }
+
+
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   // Select all grid items
+//   const gridItems = document.querySelectorAll(".grid-item");
+
+//   gridItems.forEach(item => {
+//       item.addEventListener("click", () => {
+//           // Get the URL from the data attribute
+//           const url = item.getAttribute("data-url");
+//           if (url) {
+//               window.location.href = url; // Redirect to the URL
+//           }
+//       });
+//   });
+// });
+
+// let stockData = [];
+// let newsData = [];
+// let companies = [];
+// let mutualFunds = [];
+// let golds = [];
+// let forex = [];
+
+// fetch(
+//   "https://moneypulse-47eeb-default-rtdb.asia-southeast1.firebasedatabase.app/stocks.json"
+// )
+//   .then((res) => res.json())
+//   .then((resp) => {
+//     let arr = Object.entries(resp);
+//     // console.log(arr);
+//     stockData = [...arr];
+//     displayMarket(stockData);
+//   })
+//   .catch((err) => console.log(err));
+
+// function displayMarket(arr) {
+//   const marketData = document.getElementById("marketData");
+//   arr.forEach(([name, data]) => {
+//     const arrow = Number(data.percentage_change) > 0 ? "▲" : "▼";
+//     const changeColor = Number(data.change) > 0 ? "green" : "red";
+//     const stockData = document.createElement("p");
+//     stockData.innerHTML = `
+//     <p style="font-weight: bold">${data.index}</p>
+//       <p style="font-weight: bold; color: rgb(59, 58, 58)">${data.value}</p>
+//       <p style="color: ${changeColor}">${arrow}</p>
+//       <p style="color: ${changeColor}">${data.change}</p>
+//       <p style="color: ${changeColor}">(${data.percentage_change}%)</p>
+//     `;
+//     marketData.appendChild(stockData);
+//   });
+// }
+
+// fetch(
+//   "https://moneypulse-47eeb-default-rtdb.asia-southeast1.firebasedatabase.app/news.json"
+// )
+//   .then((res) => res.json())
+//   .then((resp) => {
+//     newsData = [...resp];
+//     // console.log(newsData);
+//     displayNews(newsData);
+//   })
+//   .catch((err) => console.log(err));
+
+// function displayNews(arr) {
+//   const newsContainer = document.getElementById("news-section");
+//   arr.forEach((el) => {
+//     const news = document.createElement("div");
+//     news.classList.add("news");
+//     news.innerHTML = `
+//           <h4 class="news-title">${el.headline}</h4>
+//           <span class="newsSource">Source: ${el.source}</span>
+//           <span class="newsDate">${el.date}</span>
+//           <p class="newsDescription">${el.description}</p>
+//           `;
+//     newsContainer.appendChild(news);
+//   });
+// }
+
+// fetch(
+//   "https://moneypulse-47eeb-default-rtdb.asia-southeast1.firebasedatabase.app/companies.json"
+// )
+//   .then((res) => res.json())
+//   .then((resp) => {
+//     companies = [...resp];
+//     const topGainers = [...resp]
+//       .sort((a, b) => b.change - a.change)
+//       .slice(0, 6);
+//     const topLosers = [...resp]
+//       .filter((el) => el.change < 0)
+//       .sort((a, b) => a.change - b.change)
+//       .slice(0, 6);
+//     displayGainersLosers(topGainers, topLosers);
+//     // console.log(topGainers, topLosers);
+//     displayChart(companies);
+//     // console.log(companies);
+//   })
+//   .catch((err) => console.log(err));
+
+// function displayChart(arr) {
+//   const charts = document.getElementById("charts");
+//   const stocksChart = document.getElementById("stocks-chart");
+//   arr.forEach((el) => {
+//     const company = document.createElement("tr");
+//     const changeColor = Number(el.change) < 0 ? "red" : "green";
+//     company.innerHTML = `
+//     <td style="font-weight: bold">${el.symbol}</td>
+//     <td style="font-weight: bold; color: rgb(59, 58, 58)">${el.current_price}</td>
+//     <td style="color: ${changeColor}">${el.change}</td>
+//     <td style="color: ${changeColor}">${el.market_cap}</td>
+//   `;
+
+//     stocksChart.appendChild(company);
+//   });
+// }
+
+// function displayGainersLosers(gainers, losers) {
+//   const gainersChart = document.getElementById("gainers-chart");
+//   const losersChart = document.getElementById("losers-chart");
+//   gainers.forEach((el) => {
+//     const gainers = document.createElement("tr");
+//     const changeColor = Number(el.change) < 0 ? "red" : "green";
+//     gainers.innerHTML = `
+//     <td style="font-weight: bold">${el.symbol}</td>
+//     <td style="font-weight: bold; color: rgb(59, 58, 58)">${el.current_price}</td>
+//     <td style="color: ${changeColor}">${el.change}</td>
+//     <td style="color: ${changeColor}">${el.market_cap}</td>
+//   `;
+
+//     gainersChart.appendChild(gainers);
+//   });
+
+//   losers.forEach((el) => {
+//     const losers = document.createElement("tr");
+//     const changeColor = Number(el.change) < 0 ? "red" : "green";
+//     losers.innerHTML = `
+//     <td style="font-weight: bold">${el.symbol}</td>
+//     <td style="font-weight: bold; color: rgb(59, 58, 58)">${el.current_price}</td>
+//     <td style="color: ${changeColor}">${el.change}</td>
+//     <td style="color: ${changeColor}">${el.market_cap}</td>
+//   `;
+
+//     losersChart.appendChild(losers);
+//   });
+// }
+
+// fetch(
+//   "https://moneypulse-47eeb-default-rtdb.asia-southeast1.firebasedatabase.app/commodities.json"
+// )
+//   .then((res) => res.json())
+//   .then((resp) => {
+//     const arr = Object.entries(resp);
+//     golds = [...arr];
+//     // console.log(golds);
+//     displayCommodities(golds);
+//   })
+//   .catch(err=>console.log(err))
+
+// function displayCommodities(arr) {
+//   const commoChart = document.getElementById("commodities-chart");
+//   arr.forEach(([com, data]) => {
+//     const comData = document.createElement("tr");
+//     const changeColor = Number(data.change) < 0 ? "red" : "green";
+//     comData.innerHTML = `
+//               <td style="font-weight: bold">${data.name}</td>
+//               <td style="font-weight: bold; color: rgb(59, 58, 58)">${data.value}</td>
+//               <td style="color: ${changeColor}">${data.change}</td>
+//               <td style="color: ${changeColor}">${data.percentage_change}</td>
+//     `;
+//     commoChart.appendChild(comData);
+//   });
+// }
+
+// fetch('https://moneypulse-47eeb-default-rtdb.asia-southeast1.firebasedatabase.app/forex.json')
+//     .then(res => res.json())
+//     .then(resp => {
+//       const data = Object.entries(resp);
+//       const forex = [...data];
+//       // console.log(forex);
+//       displayForex(forex);
+//     })
+//     .catch(err => console.log(err));
+
+//   function displayForex(arr) {
+//       const currChart = document.getElementById('curr-chart');
+//       arr.forEach(([curr, data]) => {
+//           const currName = curr.trim().split('_');
+//           const currency = '' + currName[0] + currName[1];
+//           const changeColor = Number(data.change) < 0 ? 'red' : 'green';
+//           const currData = document.createElement('tr');
+//           currData.innerHTML = `
+//             <td style="font-weight: bold">${currency.toUpperCase()}</td>
+//             <td style="font-weight: bold; color: rgb(59, 58, 58)">${data.rate}</td>
+//             <td style="color: ${changeColor}">${data.change}</td>
+//             <td style="color: ${changeColor}">${data.percentage_change}</td>
+//           `;
+
+//           currChart.appendChild(currData);
+//       });
+//   }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 5%;
+        margin-left: 5%;
+        margin-right: 5%;
+        grid-gap: 20px;
+      }
+
+      #container > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #cecece;
+      }
+
+      img {
+        width: 90%;
+        height: 225px;
+      }
+    </style>
+    <title>E Commerce</title>
+  </head>
+  <body>
+    <h1>E Commerce</h1>
+    <div id="container"></div>
+  </body>
+  <script>
+    
+    let container = document.getElementById("container");
+
+    let data = [];
+
+    // get the data
+    fetch("https://fakestoreapi.com/products")
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (res) {
+        displayData(res);
+      });
+
+    function displayData(data) {
+      data.forEach(function (product) {
+        let div = document.createElement("div");
+
+        let productImg = document.createElement("img");
+
+        productImg.src = product.image;
+
+        let title = document.createElement("p");
+
+        title.innerText = product.title;
+
+        let price = document.createElement("p");
+
+        price.innerText = "INR : " + product.price;
+
+        div.append(productImg, title, price);
+
+        container.append(div);
+      });
+    }
+
+  </script>
+</html>

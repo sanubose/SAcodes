@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Input Interface</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> -->
+
+</head>
+<body>
+    <button id="darkModeToggle" class="dark-mode-button">🌙 Dark Mode</button>
+    <div class="container">
+        <h1>Voice Input Interface</h1>
+
+        <button id="recordButton" class="record-button">
+            <i class="fas fa-microphone"></i> Record
+        </button>
+
+        <div id="transcriptionArea" class="transcription-area">
+            <p id="transcriptionText">Real-time transcription will be displayed here...</p>
+        </div>
+
+        <div class="button-group">
+            <button id="resetButton" class="button">Reset</button>
+            <button id="submitButton" class="button">Submit</button>
+        </div>
+
+        <div id="statusArea" class="status-area">
+            <p id="statusText"></p>
+        </div>
+    </div>
+       
+    
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/YOUR_FONT_AWESOME_KIT.js" crossorigin="anonymous"></script> <!-- Font Awesome CDN - Replace with your own kit -->
+</body> 
+</html>

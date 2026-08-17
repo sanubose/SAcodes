@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Voting System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .vote-container {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px 40px;
+      max-width: 500px;
+      width: 100%;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      text-align: center;
+    }
+
+    .vote-container h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: 700;
+      color: #00fff0;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+
+    .buttons button {
+      background: #00fff0;
+      color: #000;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .buttons button:hover {
+      background: #00c6b3;
+      transform: scale(1.05);
+    }
+
+    .chart-container {
+      margin-top: 20px;
+    }
+
+    canvas {
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="vote-container">
+    <h2 id="issue-title">🚨 Should we ban plastic bags in city markets?</h2>
+    <div class="buttons">
+      <button onclick="vote('yes')">Yes 🥰</button>
+      <button onclick="vote('no')">No 😭</button>
+    </div>
+    <div class="chart-container">
+      <canvas id="voteChart"></canvas>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    let votes = { yes: 0, no: 0 };
+
+    function vote(type) {
+      if (type === 'yes') votes.yes++;
+      if (type === 'no') votes.no++;
+      updateChart();
+    }
+
+    const ctx = document.getElementById('voteChart').getContext('2d');
+    const voteChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Yes', 'No'],
+        datasets: [{
+          label: 'Vote %',
+          data: [0, 0],
+          backgroundColor: ['#00fff0', '#ff3d67'],
+          borderWidth: 2
+        }]
+      },
+      options: {
+        plugins: {
+          legend: {
+            labels: {
+              color: '#ffffff',
+              font: { size: 14 }
+            }
+          }
+        }
+      }
+    });
+
+    function updateChart() {
+      let total = votes.yes + votes.no;
+      let yesPercent = total ? (votes.yes / total) * 100 : 0;
+      let noPercent = total ? (votes.no / total) * 100 : 0;
+      voteChart.data.datasets[0].data = [yesPercent, noPercent];
+      voteChart.update();
+    }
+  </script>
+</body>
+</html>

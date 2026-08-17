@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Platform</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f4f4f4; }
+        .container { max-width: 900px; margin: auto; }
+        .controls { display: flex; justify-content: space-between; margin-bottom: 20px; }
+        .movie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+        .movie-card { background: white; padding: 10px; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1); cursor: pointer; }
+        .movie-card img { width: 100%; border-radius: 5px; }
+        .movie-card h3 { margin: 10px 0 5px; font-size: 1.2em; }
+        .movie-card p { font-size: 0.9em; color: #555; }
+        .pagination { text-align: center; margin-top: 20px; }
+        .pagination button { padding: 5px 10px; margin: 0 5px; cursor: pointer; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; }
+        .modal-content { background: white; padding: 20px; border-radius: 5px; max-width: 400px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <input type="text" id="search-input" placeholder="Search movies...">
+            <select id="filter-select">
+                <option value="all">All Genres</option>
+                <option value="action">Action</option>
+                <option value="drama">Drama</option>
+                <option value="comedy">Comedy</option>
+            </select>
+            <select id="sort-select">
+                <option value="rating">Sort by Rating</option>
+                <option value="releaseDate">Sort by Release Date</option>
+            </select>
+        </div>
+        <div id="movie-grid" class="movie-grid"></div>
+        <div id="pagination" class="pagination"></div>
+    </div>
+    <div id="movie-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title"></h2>
+            <div id="modal-content"></div>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+    <script>
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            databaseURL: "YOUR_DATABASE_URL",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database().ref("movies");
+        const movieGrid = document.getElementById("movie-grid");
+        const searchInput = document.getElementById("search-input");
+        let movies = [];
+        let currentPage = 1;
+        const moviesPerPage = 10;
+        db.on("value", (snapshot) => {
+            movies = snapshot.val() ? Object.values(snapshot.val()) : [];
+            renderMovies();
+        });
+        function renderMovies() {
+            let filteredMovies = filterMovies();
+            let paginatedMovies = paginateMovies(filteredMovies);
+            movieGrid.innerHTML = paginatedMovies.map(movie => `
+                <div class="movie-card" onclick="showMovieDetails(${movie.id})">
+                    <img src="${movie.thumbnail}" alt="${movie.title}" />
+                    <h3>${movie.title}</h3>
+                    <p>${movie.genre} | ${movie.releaseDate} | ⭐${movie.rating}</p>
+                </div>
+            `).join("\n");
+        }
+        function filterMovies() {
+            let query = searchInput.value.toLowerCase();
+            return movies.filter(movie => 
+                movie.title.toLowerCase().includes(query) || 
+                movie.genre.toLowerCase().includes(query) || 
+                movie.tags.toLowerCase().includes(query)
+            );
+        }
+        function showMovieDetails(movieId) {
+            let movie = movies.find(m => m.id === movieId);
+            if (!movie) return;
+            document.getElementById("modal-title").innerText = movie.title;
+            document.getElementById("modal-content").innerHTML = `
+                <img src="${movie.thumbnail}" alt="${movie.title}" />
+                <p><b>Director:</b> ${movie.director}</p>
+                <p><b>Cast:</b> ${movie.cast.join(", ")}</p>
+                <p><b>Duration:</b> ${movie.duration} min</p>
+                <p><b>Release Date:</b> ${movie.releaseDate}</p>
+                <p><b>Rating:</b> ⭐${movie.rating}</p>
+            `;
+            document.getElementById("movie-modal").style.display = "block";
+        }
+        function closeModal() {
+            document.getElementById("movie-modal").style.display = "none";
+        }
+    </script>
+</body>
+</html>

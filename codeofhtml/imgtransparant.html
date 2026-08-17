@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image transprant tech</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+    
+        .Box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px;
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for the container */
+            padding: 20px;
+        }
+    
+        .imgBox {
+            width: 300px;
+            height: 350px;
+            border: 2px solid black;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent */
+            text-align: center;
+            transition: opacity 0.3s, transform 0.3s;
+            opacity: 0.5; /* Default semi-transparent for all elements */
+        }
+    
+        .imgBox img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 2px solid black;
+        }
+    
+        .imgBox p {
+            margin: 10px 0 0;
+            padding: 0;
+            font-size: 18px;
+            color: #333;
+        }
+    
+        /* Hover effect: Highlight the focused box */
+        .imgBox:hover {
+            opacity: 1; /* Make the hovered element fully visible */
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+    
+        /* When hovering over a box, dim all non-hovered boxes */
+        .Box:hover .imgBox {
+            opacity: 0.2; /* Dim other boxes */
+        }
+    
+        .Box:hover .imgBox:hover {
+            opacity: 1; /* Keep the hovered element clear */
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <div class="Box">
+        
+        <div class="imgBox"><img src="https://www.epicgardening.com/wp-content/uploads/2023/09/African-Daisy.jpg" alt=""><p>African Daisy </p></div>
+        <div class="imgBox"><img src="https://www.epicgardening.com/wp-content/uploads/2023/09/African-Lily.jpg" alt=""><p>African Lily </p></div>
+        <div class="imgBox"><img src="https://www.epicgardening.com/wp-content/uploads/2023/09/African-Marigold.jpg" alt=""><p>African Marigold  </p></div>
+        <div class="imgBox"><img src="https://www.epicgardening.com/wp-content/uploads/2023/09/African-Violet.jpg" alt=""><p>African Violet</p></div>
+        <div class="imgBox"><img src="https://www.epicgardening.com/wp-content/uploads/2023/09/Alpenrose.jpg" alt=""><p>Alpenrose  </p></div>
+        <div class="imgBox"><img src="https://www.epicgardening.com/wp-content/uploads/2023/09/Amaryllis.jpg" alt=""><p>Amaryllis</p></div>
+        <div class="imgBox"><img src="https://www.epicgardening.com/wp-content/uploads/2023/09/American-Lotus.jpg" alt=""><p>American Lotus</p></div>
+        <div class="imgBox"><img src="https://www.epicgardening.com/wp-content/uploads/2023/09/American-Wisteria.jpg" alt=""><p>American Wisteria  </p></div>
+        <div class="imgBox"><img src="https://www.epicgardening.com/wp-content/uploads/2023/09/American-Fishing-Rod.jpg" alt=""><p>Angels Fishing Rod  </p></div>
+        <div class="imgBox"><img src="https://www.epicgardening.com/wp-content/uploads/2023/09/Anise-Hyssop.jpg" alt=""><p>Anise Hyssop  </p></div>
+        <div class="imgBox"><img src="https://www.epicgardening.com/wp-content/uploads/2023/09/Aztec-Lily.jpg" alt=""><p>Aztec Lily  </p></div>
+        <div class="imgBox"><img src="https://www.epicgardening.com/wp-content/uploads/2023/09/Bachelors-Button.jpg" alt=""><p>Bachelors Button  </p></div>
+        <div class="imgBox"><img src="https://www.epicgardening.com/wp-content/uploads/2023/09/Balloon-Flowers.jpg" alt=""><p>Balloon Flower  </p></div>
+        <div class="imgBox"><img src="https://www.epicgardening.com/wp-content/uploads/2023/09/Basket-of-Gold.jpg" alt=""><p>Basket of Gold  </p></div>
+        <div class="imgBox"><img src="https://www.epicgardening.com/wp-content/uploads/2023/09/Belladonna-Lily.jpg" alt=""><p>Belladonna Lily  </p></div>
+        <div class="imgBox"><img src="https://www.epicgardening.com/wp-content/uploads/2023/09/Black-Eyed-Susan.jpg" alt=""><p>Black-Eyed Susan</p></div>
+        <div class="imgBox"><img src="https://www.epicgardening.com/wp-content/uploads/2023/09/Blue-Passion-Flower.jpg" alt=""><p>Blue Passion Flower  </p></div>
+        <div class="imgBox"><img src="https://hips.hearstapps.com/hmg-prod/images/pink-and-red-daisies-royalty-free-image-1725899524.jpg?crop=0.536xw:1.00xh;0.0799xw,0&resize=980:*" alt=""><p>Gerbera Daisy</p></div>
+        <div class="imgBox"><img src="https://www.epicgardening.com/wp-content/uploads/2023/09/White-Dipladenia.jpg" alt=""><p>White Dipladenia  </p></div>
+        <div class="imgBox"><img src="https://hips.hearstapps.com/hmg-prod/images/blue-marguerite-daisy-types-1586981033.jpg?crop=1xw:0.8347097687588485xh;center,top&resize=980:*" alt=""><p>Blue Marguerite Daisy</p></div>
+        <div class="imgBox"><img src="https://hips.hearstapps.com/hmg-prod/images/cape-daisy-types-1586981076.jpg?crop=1xw:0.9375xh;center,top&resize=980:*" alt=""><p>Cape Daisy</p></div>
+        <div class="imgBox"><img src="https://hips.hearstapps.com/hmg-prod/images/marguerite-daisy-types-1586981163.jpg?crop=0.871xw:1.00xh;0.129xw,0&resize=980:*" alt=""><p>Marguerite Daisy</p></div>
+        <div class="imgBox"><img src="https://hips.hearstapps.com/hmg-prod/images/michaelmas-daisy-types-1586981232.jpg?crop=0.967xw:1.00xh;0.0172xw,0&resize=980:*" alt=""><p>Aster Daisy</p></div>
+        <div class="imgBox"><img src="https://hips.hearstapps.com/hmg-prod/images/monoptilon-bellidiforme-little-desert-star-29-palms-royalty-free-image-1725906909.jpg?crop=0.536xw:1.00xh;0.233xw,0&resize=980:*" alt=""><p>Desert Star Daisy</p></div>
+        <div class="imgBox"><img src="https://www.epicgardening.com/wp-content/uploads/2023/09/Water-Lily.jpg" alt=""><p>Water Lily  </p></div>
+        <div class="imgBox"><img src="https://hips.hearstapps.com/hmg-prod/images/field-of-daisies-royalty-free-image-1725898229.jpg?crop=0.536xw:1.00xh;0.206xw,0&resize=980:*" alt=""><p>Field Daisy </p></div>
+        
+        
+    </div>
+    
+</body>
+</html>

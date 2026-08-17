@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <style>
+
+        *{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 10px;
+
+        }
+        /* body {
+    background: linear-gradient(to bottom, #020024, #090979, #800080);
+    height: 100vh;
+    margin: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); /* Star Effect 
+
+} */
+body {
+    background: linear-gradient(to bottom, #000428, #004e92, #090979, #800080);
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed;  /* Ensure Background Stays Fixed */
+}
+
+
+         h1{
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            font-style: italic;
+            font-weight:900;
+            margin-top:40px ;
+            text-align: center;
+            padding: 10px;
+         }
+         .container{
+            width:1200px;
+            height: auto;
+            display:flex;
+            margin:20px;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+         }
+         .planet {
+            width: 350px;
+            height: 400px;
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            padding: 10px;
+            /* background-color:#f0f9f8; */
+            background: linear-gradient(to bottom, #020024, #090979, #800080);
+            }
+
+        
+        .planet img{
+            display: block;
+            width:100%;
+            height:300px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .planet p{
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            font-style: italic;
+            font-weight: 600;
+            margin-top:20px ;
+        }
+
+
+        /* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .planet {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .planet p {
+        font-size: 18px;
+    }
+}
+
+    </style>
+
+</head>
+<body> 
+         <h1>Our Planets! 🌞 🌙</h1>
+     <div class="container">
+        <div class="planet"><img src="https://www.cnet.com/a/img/resize/3c69a084c060edaa19b76c161c9c178973deb732/hub/2017/06/08/04532489-64a5-4fba-9484-2f3b3bd20a19/mercuryglobe.jpg?auto=webp&width=1200" alt="">
+            <P>Mercury</P>
+        </div>
+        <div class="planet"><img src="https://platform.vox.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/19533308/pluto_natural_color_20150714.png?quality=90&strip=all&crop=0%2C0%2C100%2C100&w=1080" alt="">
+            <P>Pluto</P>
+        </div>
+        <div class="planet"><img src="https://cdn.mos.cms.futurecdn.net/4or9Sj42y8dHuA8khBB8DK-1200-80.jpg" alt="SUN">
+            <P>Sun</P>
+        </div>
+        <div class="planet"><img src="https://cdn.mos.cms.futurecdn.net/xgn2twA6cVqdvP8Bwaewgh-1200-80.jpg" alt="">
+            <P>Earth</P>
+        </div>
+        <div class="planet"><img src="https://cdn.mos.cms.futurecdn.net/LeZ2ZicMsBz2MDs3JA2kJn-1200-80.jpg" alt="">
+            <P>Moon</P>
+        </div>
+        <div class="planet"><img src="https://cdn.mos.cms.futurecdn.net/DfcnU8Z2yeyrYLmsRCKtDH-1200-80.jpg" alt="">
+            <P>Mars</P>
+        </div>
+        <div class="planet"><img src="https://cdn.mos.cms.futurecdn.net/vNwvP2CFoxuoT4ZUFawaTP-1200-80.jpg" alt="">
+            <P>Neptune</P>
+        </div>
+        <div class="planet"><img src="https://media.cntraveler.com/photos/66f5743c6fa760555a3de330/16:9/w_1920,c_limit/GettyImages-121489219.jpg" alt="">
+            <P>Moon</P>
+        </div>
+        <div class="planet"><img src="https://www.quantamagazine.org/wp-content/uploads/2018/07/SolarFull_SeanDoran_2880FullwidthLede.jpg" alt="">
+            <P>Sun</P>
+        </div>
+        <div class="planet"><img src="https://c.ndtvimg.com/2022-09/cqi3c0n_the-sun-generic_625x300_13_September_22.jpg" alt="">
+            <P>Sun</P>
+        </div>
+        <div class="planet"><img src="https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/D379/production/_102673145_gettyimages-647269852.jpg" alt="">
+            <P>Mars</P>
+        </div>
+        <div class="planet"><img src="https://i.pinimg.com/736x/31/de/07/31de07abbddee450d88b121d11ec9b1a.jpg" alt="">
+            <P>Saturn</P>
+        </div>
+        <div class="planet"><img src="https://cdn.britannica.com/66/155966-131-17B5B518/Jupiter.jpg?w=1000" alt="">
+            <P>Jupiter</P>
+        </div>
+        <div class="planet"><img src="https://ychef.files.bbci.co.uk/1280x720/p0257vk5.jpg" alt="">
+            <P>Uranus</P>
+        </div>
+        <div class="planet"><img src="https://cdn.mos.cms.futurecdn.net/v5n22xGyNNHLzSnSArbrVH-1200-80.jpg" alt="">
+            <P>Solar System</P>
+        </div>
+     </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoneyControl Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .topbar {
+            background-color: #000;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .logo {
+            height: 40px;
+        }
+        .social-icons i {
+            margin: 0 5px;
+            font-size: 18px;
+        }
+        .stocks, .trending, .news, .markets {
+            padding: 15px 20px;
+            border-bottom: 2px dashed #ccc;
+            background: white;
+            margin: 10px;
+        }
+        .stock-letters span {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            background: #ddd;
+            margin: 5px;
+            font-weight: bold;
+        }
+        .others {
+            background: #bbb;
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="topbar">
+            <img src="logo.png" alt="MoneyControl Logo" class="logo">
+            <div class="social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-telegram"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fas fa-rss"></i>
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="stocks">
+            <strong>Stocks:</strong>
+            <div class="stock-letters">
+                <span>A</span> <span>B</span> <span>C</span> <span>D</span> <span>E</span> <span>F</span>
+                <span>G</span> <span>H</span> <span>I</span> <span>J</span> <span>K</span> <span>L</span>
+                <span>M</span> <span>N</span> <span>O</span> <span>P</span> <span>Q</span> <span>R</span>
+                <span>S</span> <span>T</span> <span>U</span> <span>V</span> <span>W</span> <span>X</span>
+                <span>Y</span> <span>Z</span> <span class="others">Others</span>
+            </div>
+        </section>
+        <section class="trending">
+            <h3>Trending Topics</h3>
+            <p>Sensex Today | IT Stocks | NSE F&O Stocks | Heathrow Airport | Bajaj Finance Share Price | IPL Schedule 2025 | Gold Price</p>
+        </section>
+        <section class="news">
+            <h3>News</h3>
+            <p>Business | Markets | Stocks | India News | City News | Economy | Mutual Funds | Personal Finance | IPO News | Startups</p>
+        </section>
+        <section class="markets">
+            <h3>Markets</h3>
+            <p>Home | Currencies | Commodities | Pre-Market | IPO | Global Market | Bonds</p>
+        </section>
+    </main>
+</body>
+</html>

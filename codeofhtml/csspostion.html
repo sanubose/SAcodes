@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fixed</title>
+   <style>
+    div{
+        width: 200px;
+        height: 200px;
+        border-radius: 5px;
+        text-align: center;
+    }
+    div:first-child{
+        background-color: rgb(212, 127, 255);
+    
+    }
+    div:nth-child(2){
+        background-color: aquamarine;
+        position: fixed;
+    }
+
+    div:last-child{
+        background-color: green;  
+        padding:30px;
+
+    }
+
+
+   </style>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</body>
+</html>

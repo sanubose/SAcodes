@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <style>
+        *{
+            margin:20px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        html{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 62.5%;
+        }
+        body{
+            height: 100vh;
+            background-color:#f3f3f3;
+            display: flex;
+            justify-content:center;
+            align-items:center;
+           
+
+        }
+        .item{
+            font-size: 2rem;
+        }
+        .item-1{
+            background-color: #21e5bb;
+            grid-column-start:3;
+            grid-row: 3/4;
+            grid-column-end: 4;
+        }
+        .item-2{
+            background-color: #88847f;
+            grid-row: 1/2;
+            grid-column:2/3;
+        }
+        .item-3{
+            background-color: #374840;
+            /* grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 1;
+            grid-column-end: 2; */
+            grid-area: 1/1/2/2;
+        }
+        .item-4{
+            background-color: #376a54;
+        }
+        .item-5{
+            background-color: #d6d4d3;
+        }
+        .item-6{
+            background-color: #516464;
+        }
+        .item-7{
+            background-color: #cfdbdb;
+        }
+        .item-8{
+            background-color: #b09c98;
+        }
+        .item-9{
+            background-color: #ddc5af;
+        }
+        .container{
+            width: 1200px;
+            background-color: #efedec;
+            box-shadow: red;
+            display: grid;
+            grid-template-columns:repeat(3, 1fr);
+            grid-template-rows: repeat(3,200px);
+            /* grid-column-gap:30px ;
+            grid-row-gap: 20px; */
+            grid-gap:20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item-1">item-1</div>
+        <div class="item item-2">item-2</div>
+        <div class="item item-3">item-3</div>
+        <div class="item item-4">item-4</div>
+        <div class="item item-5">item-5</div>
+        <div class="item item-6">item-6</div>
+        <div class="item item-7">item-7</div>
+        <div class="item item-8">item-8</div>
+        <div class="item item-9">item-9</div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoneyControl Clone</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    
+    
+    <style>
+ body {
+   font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+ }
+
+
+
+ .navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid #dddddd;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            align-items: center;
+            /* position: sticky;
+            top: -1px;
+            z-index: 1; */
+        }
+        .navbar-left, .navbar-right {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-left select, .navbar-left button {
+            margin-right: 15px;
+            padding: 8px;
+            border: none;
+            background-color: #f2f2f2;
+            cursor: pointer;
+        }
+        .navbar-right a {
+            text-decoration: none;
+            color:black;
+            margin-left: 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .go-ad-free {
+            color: orange;
+            border: 1px solid orange;
+        }
+        .login {
+            color: #666;
+        }
+        
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        .search-bar input {
+            width: 60%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .search-bar button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .logo img {
+            height: 50px;
+        }
+        .go-pro {
+            margin-left: 10px;
+            color: orange;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .sub-navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 1px;
+            border-bottom: 1px solid #dddddd;
+            position: sticky;
+            top: -1px;
+            z-index: 1;
+        }
+        .sub-navbar a {
+          font-size: 12px;
+            text-decoration: none;
+            color:black;
+            font-weight: 500;
+            margin: 0 10px;
+        }
+        .pro, .lifetime-free, .research-picks {
+            color: orange;
+            font-weight: bold;
+        }
+        .lifetime-free {
+            color: blue;
+        }
+
+
+      
+
+
+
+
+
+
+
+ .trending-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+  
+    .divider {
+      border-top: 2px solid #ccc;
+      margin-bottom: 15px;
+    }
+
+    
+    .trending-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    
+    .trending-item {
+      padding-bottom: 10px;
+      border-bottom: 1px dotted #ccc; 
+    }
+
+    
+    .first {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .first img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 5px;
+      flex-shrink: 0;
+    }
+
+    .first p {
+      font-size: 14px;
+      line-height: 1.4;
+      color: #333;
+      flex: 1;
+    }
+
+    
+    .trending-item p {
+      font-size: 14px;
+      line-height: 1.4;
+      color:black;
+    }
+
+ .containerE {
+      max-width: 1200px;
+      margin: auto;
+    }
+    
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    .column {
+      flex: 1;
+      min-width: 250px; 
+      background-color: #fff;
+    }
+    
+    .column h2 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    .subheading {
+      margin-bottom: 10px;
+    }
+    .subheading span {
+      font-size: 14px;
+      color: #666;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    .subheading span.active {
+      font-weight: bold;
+      color: #000;
+      border-bottom: 2px solid #000;
+    }
+    /* Table styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+    }
+    table th {
+      text-align: left;
+      color: #777;
+      font-size: 14px;
+      padding-bottom: 8px;
+    }
+    table td {
+      font-size: 14px;
+      padding: 6px 0;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .green {
+      color: green;
+    }
+    .red {
+      color: red;
+    }
+    
+    .see-all-link {
+      font-size: 14px;
+      color: #007bff;
+      text-decoration: none;
+    }
+    .see-all-link:hover {
+      text-decoration: underline;
+    }
+
+ .containerD {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px solid #ccc;
+      margin-bottom: 20px;
+    }
+
+    /* Main row for columns */
+    .row {
+      display: flex;
+      flex-wrap: wrap; /* Allows wrapping on smaller screens */
+      gap: 20px;
+    }
+
+    /* Column classes */
+    .col-1 {
+      flex: 2; /* Wider first column */
+    }
+    .col-2 {
+      flex: 1;
+    }
+    .col-3 {
+      flex: 1;
+    }
+
+    /* First column: one image + paragraph */
+    .col-1 img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    .col-1 p {
+      font-size: 16px;
+      line-height: 1.4;
+      color: #333;
+    }
+
+    /* Second column: 2 rows, each row has image + paragraph */
+    .col-2 .item {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .col-2 .item img {
+      width: 80px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .col-2 .item p {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.4;
+      flex: 1;
+    }
+
+    
+    .col-3 .item {
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 2px dotted #ccc; 
+    }
+    .col-3 .item p {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.4;
+    }
+
+
+ .containerC {
+            width: 90%;
+            margin: auto;
+            padding-top: 20px;
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .separator {
+            border-top: 2px solid #ccc;
+            margin: 10px 0;
+        }
+        .tabs {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+        .tab {
+            font-size: 16px;
+            color: #777;
+            cursor: pointer;
+        }
+        .tab.active {
+            font-weight: bold;
+            color: black;
+            border-bottom: 3px solid black;
+            padding-bottom: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            color: #777;
+            font-size: 14px;
+        }
+        td {
+            font-size: 16px;
+        }
+        .company-name {
+            font-weight: bold;
+        }
+
+ .containerB {
+            width: 90%;
+            margin: auto;
+            padding-top: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background-color: rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .column {
+            width: 48%; /* Two columns */
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 0;
+            border-bottom: 1px dotted #ccc;
+        }
+
+        .item img {
+            width: 100px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .item p {
+            font-size: 14px;
+            color: #333;
+        }
+
+
+
+ .opinion-section {
+            max-width: 1000px;
+             margin: 10px; 
+        }
+        .opinion-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .divider {
+            border-top: 2px solid #ccc;
+            margin-bottom: 15px;
+        }
+        .opinion-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .opinion-box {
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+            text-align: center;
+        }
+        .opinion-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .opinion-text {
+            margin-top: 5px;
+            font-size: 16px;
+        }
+
+ .containerA {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .section {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .section h2 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .section img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .content {
+            margin-top: 10px;
+        }
+        .content p {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        .dotted-line {
+            border-bottom: 1px dotted #aaa;
+            margin: 10px 0;
+        }
+
+
+
+
+      .podcast-section {
+            display: flex;
+            gap: 20px;
+        }
+        .highlighted-podcast {
+            flex: 1.5;
+        }
+        .highlighted-podcast img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .highlighted-podcast h3 {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .highlighted-podcast p {
+            color: #007bff;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .recommended-podcasts {
+            flex: 2;
+        }
+        .recommended-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .recommended-list {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+        .podcast-card {
+            min-width: 250px;
+            background: #f8f8f8;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .podcast-card img {
+            width: 100%;
+            border-radius: 6px;
+        }
+        .podcast-card h4 {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .podcast-card p {
+            font-size: 12px;
+            color: #007bff;
+        }
+
+
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.grid-item {
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.grid-item:hover {
+  transform: scale(1.05);
+}
+
+p {
+  font-size: 14px;
+  color: #333;
+}
+
+
+
+
+
+        .advisory {
+              background-color: #ffdddd;
+              padding: 10px;
+               text-align: center;
+                font-size: 14px;
+                 color: #d00;
+            }
+        .downbar {
+            background-color: #000;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .logo {
+            height: 40px;
+
+        }
+        .social-icons i {
+            margin: 0 10px;
+            font-size: 18px;
+        }
+        .stocks, .trending, .news, .markets ,.PersonalFinance ,.MutualFunds ,.Tools ,.Community ,.Network18Sites ,.QuickLinks{
+            padding: 15px 20px;
+            border-bottom: 2px dashed #ccc;
+            background: white;
+            margin: 10px;
+        }
+        .stock-letters span {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            background: #ddd;
+            margin: 5px;
+            font-weight: bold;
+        }
+        .others {
+            background: #bbb;
+            padding: 5px 20px;
+            border-radius: 100%;
+            text-align: center;
+        }
+
+        
+       .footer1 {
+          background-color: #f1f1f1;
+          padding: 15px;
+         text-align: center;
+        }
+
+.footer1 .apps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+  margin-right: 400px;
+}
+
+.footer1 .apps span{
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+}
+
+.footer1 .apps img {
+  height: 50px;
+  margin-top: 10px;
+}
+
+.footer1 .copyright {
+  font-size: 15px;
+  color: #666;
+  max-width: 80%;
+  margin: auto;
+}
+
+.footer1 .divider {
+  border-top: 1px solid #ccc;
+  margin: 10px auto;
+  max-width: 90%;
+}
+
+.footer1 .iso-cert {
+  text-align: right;
+  padding-right: 20px;
+  margin-bottom: 15px; 
+  margin-top: -60px;
+}
+
+.footer1 .iso-cert img {
+  height: 70px;
+  /* margin-bottom: 15px; */
+}
+    </style>
+</head>
+<body>
+
+
+
+  
+  <div class="navbar">
+    <div class="navbar-left">
+        <select>
+            <option value="english">English</option>
+            <option value="hindi">Hindi</option>
+        </select>
+        <button>Specials</button>
+    </div>
+    <div class="navbar-right">
+        <a href="#" class="my-alerts">My Alerts</a>
+        <a href="#" class="go-ad-free">Go Ad-Free</a>
+        <a href="#" class="login">Hello, Login</a>
+    </div>
+</div>
+
+
+<div class="search-bar">
+    <input type="text" placeholder="Search Quotes, News, Mutual Fund NAVs">
+    <button>Search</button>
+</div>
+
+
+<div class="logo">
+    <img src="https://images.moneycontrol.com/images/common/headfoot/logo.png?impolicy=mchigh" alt="MoneyControl Logo">
+    <span class="go-pro">Go PRO @ ₹1/day</span>
+</div>
+
+
+<div class="sub-navbar">
+    <a href="#" class="pro">PRO</a>
+    <a href="#">Markets</a>
+    <a href="#">News</a>
+    <a href="#">Editor's Picks</a>
+    <a href="#">IPL 2025</a>
+    <a href="#">Tech</a>
+    <a href="#">India</a>
+    <a href="#">Portfolio</a>
+    <a href="#">Watchlist</a>
+    <a href="#">Commodities</a>
+    <a href="#">MF</a>
+    <a href="#">Personal Finance</a>
+    <a href="#">Forum</a>
+    <a href="#">Videos</a>
+    <a href="#">Invest Now</a>
+    <a href="#" class="lifetime-free">Lifetime Free</a>
+    <a href="#">Credit Score</a>
+    <a href="#">IPO</a>
+    <a href="#">by SEBI's RIA</a>
+    <a href="#" class="research-picks">#Research Picks</a>
+    <a href="#">#NiveshkaSahiKadam</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+  <div class="trending-container">
+    <h2>TRENDING</h2>
+    <div class="divider"></div>
+
+    <div class="trending-list">
+      
+      <div class="trending-item first">
+        <img src="https://images.moneycontrol.com/static-mcnews/2025/03/20250323064639_MixCollage-23-Mar-2025-12-13-PM-3381.jpg?impolicy=website&width=150&height=90" alt="User Image" />
+        <p>
+          Bengaluru woman slams police for not rescuing teen brother from harassing cab driver:
+          ‘Shaking with rage’
+        </p>
+      </div>
+
+      
+      <div class="trending-item">
+        <p>Bengaluru's first summer rain floods roads, netizens slam BBMP for shoddy works. Videos</p>
+      </div>
+      <div class="trending-item">
+        <p>‘Bill, you’re out!’: Sachin Tendulkar plays ‘Crennis’ with Bill Gates, Satya Nadella reacts. Watch</p>
+      </div>
+      <div class="trending-item">
+        <p>Jeff Bezos, Lauren Sanchez to marry in Italy this year, wedding invites are out</p>
+      </div>
+      <div class="trending-item">
+        <p>ChatGPT falsely claims man murdered his sons; he files complaint against OpenAI. What is AI hallucination?</p>
+      </div>
+    </div>
+  </div>
+
+ 
+    
+
+
+    <div class="containerE">
+        <div class="row">
+        
+          <div class="column">
+            <h2>COMMODITIES</h2>
+            <div class="subheading">
+              <span class="active">MCX</span>
+              <span>NCDEX</span>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Commodity</th>
+                  <th>Price</th>
+                  <th>Change</th>
+                  <th>% Chg</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Gold Apr04</td>
+                  <td>87,785.00</td>
+                  <td class="green">7.00</td>
+                  <td class="green">0.01</td>
+                </tr>
+                <tr>
+                  <td>Silver Apr04</td>
+                  <td>69,784.00</td>
+                  <td class="red">-24.00</td>
+                  <td class="red">-0.02</td>
+                </tr>
+                <tr>
+                  <td>Crudeoil Apr25</td>
+                  <td>5,899.20</td>
+                  <td class="green">9.00</td>
+                  <td class="green">0.15</td>
+                </tr>
+                <tr>
+                  <td>Naturalgas Apr25</td>
+                  <td>190.80</td>
+                  <td class="red">-1.50</td>
+                  <td class="red">-0.78</td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="#" class="see-all-link">+See all commodity prices</a>
+          </div>
+    
+          
+          <div class="column">
+            <h2>CURRENCIES</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Currency</th>
+                  <th>Price</th>
+                  <th>Change</th>
+                  <th>% Chg</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>USDINR Mar 25</td>
+                  <td>86.0150</td>
+                  <td class="red">-0.37</td>
+                  <td class="red">-0.43</td>
+                </tr>
+                <tr>
+                  <td>EURINR Mar 25</td>
+                  <td>93.2975</td>
+                  <td class="red">-0.38</td>
+                  <td class="red">-0.41</td>
+                </tr>
+                <tr>
+                  <td>JPYINR Mar 25</td>
+                  <td>57.7000</td>
+                  <td class="green">0.14</td>
+                  <td class="green">0.24</td>
+                </tr>
+                <tr>
+                  <td>GBPINR Mar 25</td>
+                  <td>111.3550</td>
+                  <td class="red">-0.54</td>
+                  <td class="red">-0.48</td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="#" class="see-all-link">+See all Exchange Rates</a>
+          </div>
+    
+          <!-- Bonds Column -->
+          <div class="column">
+            <h2>BONDS</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Price</th>
+                  <th>Change</th>
+                  <th>% Chg</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Nhpc</td>
+                  <td class="green">82.56</td>
+                  <td class="green">2.52</td>
+                  <td class="green">3.15</td>
+                </tr>
+                <tr>
+                  <td>Ntpc</td>
+                  <td class="green">351.20</td>
+                  <td class="green">9.55</td>
+                  <td class="green">2.79</td>
+                </tr>
+                <tr>
+                  <td>Jyoti Structure</td>
+                  <td class="red">189.05</td>
+                  <td class="green">0.36</td>
+                  <td class="green">1.94</td>
+                </tr>
+                <tr>
+                  <td>Rec</td>
+                  <td class="green">428.95</td>
+                  <td class="red">-0.56</td>
+                  <td class="red">-0.13</td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="#" class="see-all-link">+See all listed bonds</a>
+          </div>
+        </div>
+      </div>
+    
+
+    <div class="containerD">
+        <h2>HEALTH & FITNESS</h2>
+        <hr />
+    
+        <div class="row">
+          
+          <div class="col-1">
+            <img src=" https://images.moneycontrol.com/static-mcnews/2025/03/20250321083705_Healthy-bites.jpeg?impolicy=website&width=510&height=288 " alt="Personal Loan Top-up" />
+            <p>
+              <strong>6 easy weekend recipes with a nutritious twist: Use avocado, walnut, broccoli and more</strong>
+            </p>
+          </div>
+    
+          
+          <div class="col-2">
+            <div class="item">
+              <img src=" https://images.moneycontrol.com/static-mcnews/2025/03/20250321082141_World-Down-Syndrome-concept.jpg?impolicy=website&width=214&height=120" alt="FOIR Calculation" />
+              <p>
+                World Down Syndrome Day 2025: Causes, symptoms and the importance of early intervention....
+              </p>
+            </div>
+            <div class="item">
+              <img src=" https://images.moneycontrol.com/static-mcnews/2025/03/20250321072801_How-to-prevent-glaucoma.jpg?impolicy=website&width=214&height=120" alt="Zerodha Brokerage" />
+              <p>
+                Prevent glaucoma and vision loss with these 7 eye care habits
+              </p>
+            </div>
+          </div>
+    
+          
+          <div class="col-3">
+            <div class="item">
+              <p>
+                Heat stress symptoms: Watch out for fatigue, dehydration, heat stroke, more
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                Climate change can triple heart-related diseases in next 25 years, warns study
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                Skincare and health benefits of sesame seeds, tiny superfoods that pack a powerful punch
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                National Anaemia Day 2025: Causes, symptoms and how to prevent iron-deficiency anaemia...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <div class="containerD">
+        <h2>IPL 2025</h2>
+        <hr />
+    
+        <div class="row">
+          
+          <div class="col-1">
+            <img src=" https://images.moneycontrol.com/static-mcnews/2025/03/20250323101905_CSK-vs-MI.jpg?impolicy=website&width=510&height=288 " alt="Personal Loan Top-up" />
+            <p>
+              <strong>CSK vs MI Live Score, IPL 2025: Chennai Super Kings, Mumbai Indians face-off in season's first 'El Clasico' </strong>
+            </p>
+          </div>
+    
+          
+          <div class="col-2">
+            <div class="item">
+              <img src=" https://images.moneycontrol.com/static-mcnews/2025/03/20250323084640_cskmidhoni.png?impolicy=website&width=214&height=120" alt="FOIR Calculation" />
+              <p>
+                'Even if I'm in a wheelchair...': CSK legend MS Dhoni breaks silence on retirement ahead of...
+              </p>
+            </div>
+            <div class="item">
+              <img src=" https://images.moneycontrol.com/static-mcnews/2018/09/Shardul-Thakur.jpg?impolicy=website&width=214&height=120" alt="Zerodha Brokerage" />
+              <p>
+                IPL 2025: Shardul Thakur to join LSG after Mohsin Khan ruled out due to injury
+              </p>
+            </div>
+          </div>
+    
+          
+          <div class="col-3">
+            <div class="item">
+              <p>
+                SRH vs RR, IPL 2025 Live Score: Ishan Kishan, Travis Head take SRH off to a flying...
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                SRH vs RR, Today IPL Match: Spotlight on Sunrisers Hyderabad's explosive Top 4...
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                CSK vs MI weather forecast, IPL 2025: How rain may play a part in Chennai Super Kings vs...
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                CSK vs MI IPL 2025: Today's Match Preview, Probable Playing XIs and Head-to-Head....
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="containerD">
+        <h2>INDIA NEWS</h2>
+        <hr />
+    
+        <div class="row">
+          
+          <div class="col-1">
+            <img src=" https://images.moneycontrol.com/static-mcnews/2024/03/pexels-karolina-grabowska-6214840-1-1.jpg?impolicy=website&width=510&height=288" alt="Personal Loan Top-up" />
+            <p>
+              <strong> Firms with Rs 250-cr turnover rush to register on TReDS as March 31 deadline nears</strong>
+            </p>
+          </div>
+    
+          
+          <div class="col-2">
+            <div class="item">
+              <img src=" https://images.moneycontrol.com/static-mcnews/2025/03/20250321090256_meerut-murder-case.jpg?impolicy=website&width=214&height=120" alt="FOIR Calculation" />
+              <p>
+                Meerut murder case: Sahil, Muskan experiencing drug withdrawal symptoms, say jail...
+              </p>
+            </div>
+            <div class="item">
+              <img src=" https://images.moneycontrol.com/static-mcnews/2025/01/20250107060505_Delhi-HC.png?impolicy=website&width=214&height=120" alt="Zerodha Brokerage" />
+              <p>
+                Video on SC site, chronology of events contradict DFS claim that no cash found from judge's house...
+              </p>
+            </div>
+          </div>
+    
+          
+          <div class="col-3">
+            <div class="item">
+              <p>
+                Preparations for 2027 Kumbh Mela in Nashik slow, but will overcome challenges, says Fadnavis...
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                Challenges in Manipur can be overcome if people abide by Constitution: Justice Kotiswar...
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                Waqf Bill part of BJP's strategy to damage harmony: Congress...
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                Indian-origin man, toddler shot dead in US store; suspect arrested....
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="containerD">
+        <h2> LIFESTYLE NEWS</h2>
+        <hr />
+    
+        <div class="row">
+          
+          <div class="col-1">
+            <img src="https://images.moneycontrol.com/static-mcnews/2025/03/20250321135105_Pre-loved-luxury-products.jpg?impolicy=website&width=510&height=288 " alt="Personal Loan Top-up" />
+            <p>
+              <strong>For young Indians, pre-loved luxury is the new woke and sustainable trend gaining steam</strong>
+            </p>
+          </div>
+    
+          
+          <div class="col-2">
+            <div class="item">
+              <img src=" https://images.moneycontrol.com/static-mcnews/2025/03/20250321125942_Balcony-planters.jpg?impolicy=website&width=214&height=120" alt="FOIR Calculation" />
+              <p>
+                Beautify your balcony for spring-summer with these creative, budget-friendly DIY....
+              </p>
+            </div>
+            <div class="item">
+              <img src="https://images.moneycontrol.com/static-mcnews/2025/03/20250321122907_Welcome-spring-with-Instagram.jpg?impolicy=website&width=214&height=120" alt="Zerodha Brokerage" />
+              <p>
+                30 spring Instagram captions to capture the romance, inspiration, motivation of the...
+              </p>
+            </div>
+          </div>
+    
+          
+          <div class="col-3">
+            <div class="item">
+              <p>
+                The women spies who fooled the Nazis with simple tricks
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                Sara Tendulkar’s hot pink saree will remind you of Sara Ali Khan’s wedding look
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                Dia Mirza’s free-flowing spring dress is ideal for luxe holidays
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                Khushi Kapoor shimmers in a mesmerising golden gown
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    <div class="containerD">
+        <h2>ENTERTAINMENT NEWS</h2>
+        <hr />
+    
+        <div class="row">
+          
+          <div class="col-1">
+            <img src=" https://images.moneycontrol.com/static-mcnews/2025/03/20250323094055_Salman-Khan-and-Rashmika-Mandanna-co-starred-in-Sikandar.png?impolicy=website&width=510&height=288" alt="Personal Loan Top-up" />
+            <p>
+              <strong>Salman Khan starrer Sikandar new poster unveils full cast ahead of trailer launch, see</strong>
+            </p>
+          </div>
+    
+          
+          <div class="col-2">
+            <div class="item">
+              <img src=" https://images.moneycontrol.com/static-mcnews/2025/03/20250323091556_Salaar-re-release-received-good-response-on-Day.png?impolicy=website&width=214&height=120" alt="FOIR Calculation" />
+              <p>
+                Salaar re-release box office collection: Prabhas starrer surpasses Tumbbad's opening record, earns Rs 3.18 crore
+              </p>
+            </div>
+            <div class="item">
+              <img src=" https://images.moneycontrol.com/static-mcnews/2025/03/20250323045632_Prithviraj-Sukumaran-stars-with-Mohanlal-in-L2-Empuraan.png?impolicy=website&width=214&height=120" alt="Zerodha Brokerage" />
+              <p>
+                L2: Empuraan sets new record with 350K tickets sold in just 24 hours of advance booking
+              </p>
+            </div>
+          </div>
+    
+          
+          <div class="col-3">
+            <div class="item">
+              <p>
+                Train to Busan director Yeon Sang-ho opens up about giving an intimate turn to Netflix's....
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                Mookuthi Amman 2 shoot disrupted amidst Nayanthara’s disagreement with assistant...
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                Deepika Padukone flaunts her French skills and explores Paris on scooter, Watch video...
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                Jr NTR and Prashanth Neel’s late night chat sparks buzz among fans, director’s wife calls them ‘scary’: See pic...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <div class="containerD">
+        <h2>EDUCATION NEWS</h2>
+        <hr />
+    
+        <div class="row">
+          
+          <div class="col-1">
+            <img src=" https://images.moneycontrol.com/static-mcnews/2025/03/20250322075527_CBSE-12th-Political-Science-Exam-Review.png?impolicy=website&width=510&height=288" alt="Personal Loan Top-up" />
+            <p>
+              <strong>CBSE 12th Political Science Exam Review: Check Paper Analysis Based on Teachers &..</strong>
+            </p>
+          </div>
+    
+          
+          <div class="col-2">
+            <div class="item">
+              <img src="https://images.moneycontrol.com/static-mcnews/2025/03/20250322070928_CUET-PG-Admit-Card-2025-Out-.png?impolicy=website&width=214&height=120" alt="FOIR Calculation" />
+              <p>
+                CUET PG Admit Card 2025 Out for March 26 to April 1 Exams; Direct Link to Download Here..
+              </p>
+            </div>
+            <div class="item">
+              <img src=" https://images.moneycontrol.com/static-mcnews/2025/03/20250322060823_ISRO-YUVIKA-2025-Registration-Closes.png?impolicy=website&width=214&height=120" alt="Zerodha Brokerage" />
+              <p>
+                ISRO YUVIKA 2025 Registration Closes Tomorrow, Direct Link to Apply Here
+              </p>
+            </div>
+          </div>
+    
+          
+          <div class="col-3">
+            <div class="item">
+              <p>
+                IIT JAM 2025 Toppers List Released: Check AIR Top 10 for All Subjects at jam2025.iitd.ac.in
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                CUET PG 2025: Last Date to Register Today at cuet.nta.nic.in, Direct Link to...
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                AIBE 19 Result 2025 Declared at allindiabarexamination; Direct Link Here....
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                GDS Result 2025: India Post GDS January Merit list released @ indiapostgdsonline.gov.in; Direct link here..
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <div class="containerD">
+        <h2>TECHNOLOGY NEWS</h2>
+        <hr />
+    
+        <div class="row">
+          
+          <div class="col-1">
+            <img src=" https://images.moneycontrol.com/static-mcnews/2024/10/20241023155458_WhatsApp.jpg?impolicy=website&width=510&height=288" alt="Personal Loan Top-up" />
+            <p>
+              <strong>WhatsApp has finally started testing motion-photo sharing support on Android</strong>
+            </p>
+          </div>
+    
+          
+          <div class="col-2">
+            <div class="item">
+              <img src="https://images.moneycontrol.com/static-mcnews/2025/03/20250323051837_tiktok.jpg?impolicy=website&width=214&height=120" alt="FOIR Calculation" />
+              <p>
+                Perplexity AI wants to 'rebuild' TikTok, here's how...
+              </p>
+            </div>
+            <div class="item">
+              <img src="https://images.moneycontrol.com/static-mcnews/2022/05/IIT-Guwahati.jpg?impolicy=website&width=214&height=120" alt="Zerodha Brokerage" />
+              <p>
+                IIT Guwahati-incubated startup develops robots for AI-driven surveillance at international borders...
+              </p>
+            </div>
+          </div>
+    
+          
+          <div class="col-3">
+            <div class="item">
+              <p>
+                SRH vs RR IPL 2025 match live streaming: How, when and where to watch the match live....
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                iPhone 18 Pro models expected to get Apple’s second generation 5G modem: Report..
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                OnePlus 13T mini with an iPhone 16-like design leaked online, China launch expected next month...
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                Garena Free Fire MAX redeem codes for March 23: Win free gifts, rewards, and know how...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+   
+    <div class="containerD">
+        <h2>SCIENCE NEWS</h2>
+        <hr />
+    
+        <div class="row">
+          
+          <div class="col-1">
+            <img src=" https://images.moneycontrol.com/static-mcnews/2025/03/20250321113917_Sheetal-Kumari-fi.jpg?impolicy=website&width=510&height=288" alt="Personal Loan Top-up" />
+            <p>
+              <strong>Elusive and rare frog rediscovered in Chile after 130 years</strong>
+            </p>
+          </div>
+    
+          
+          <div class="col-2">
+            <div class="item">
+              <img src="https://images.moneycontrol.com/static-mcnews/2025/03/20250321074618_Sheetal-Kumari-fi.jpg?impolicy=website&width=214&height=120" alt="FOIR Calculation" />
+              <p>
+                Two giant sperm whales protect diver from terrifying shark; video goes viral
+              </p>
+            </div>
+            <div class="item">
+              <img src="https://images.moneycontrol.com/static-mcnews/2024/09/20240909085147_Sheetal-Kumari-fi-1.jpg?impolicy=website&width=214&height=120" alt="Zerodha Brokerage" />
+              <p>
+                Dark energy mystery deepens: Could Einstein have been wrong? Here's what new....
+              </p>
+            </div>
+          </div>
+    
+          
+          <div class="col-3">
+            <div class="item">
+              <p>
+                A giant 540-foot asteroid is speeding at 77,282 km/h towards Earth – close approach on 26 March....
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                World Forestry Day 2025: International Day of Forests date, theme, history and...
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                Mysterious steam rises in Yellowstone as new vent appears– Is the supervolcano waking up?...
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                Researchers discover world's largest living anaconda species in Amazon jungle – how long is...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <div class="containerD">
+        <h2>PERSONAL FINANCE</h2>
+        <hr />
+    
+        <div class="row">
+          
+          <div class="col-1">
+            <img src="https://images.moneycontrol.com/static-mcnews/2025/03/20250320111116_Personal-Loan-Top-up.png?impolicy=website&width=510&height=288" alt="Personal Loan Top-up" />
+            <p>
+              <strong>Personal loan top up:</strong> Eligibility to interest rate, key factors to check before applying
+            </p>
+          </div>
+    
+          
+          <div class="col-2">
+            <div class="item">
+              <img src="https://images.moneycontrol.com/static-mcnews/2025/03/20250320092723_What-is-FOIR.png?impolicy=website&width=214&height=120" alt="FOIR Calculation" />
+              <p>
+                <strong>FOIR Calculation:</strong> Impact of FOIR on personal loan eligibility and tips to improve it
+              </p>
+            </div>
+            <div class="item">
+              <img src="https://images.moneycontrol.com/static-mcnews/2023/07/1-3.png?impolicy=website&width=214&height=120" alt="Zerodha Brokerage" />
+              <p>
+                Nithin Kamath says Zerodha waived off brokerage on delivery yet saw steady growth despite market volatility
+              </p>
+            </div>
+          </div>
+    
+          
+          <div class="col-3">
+            <div class="item">
+              <p>
+                Gold rates in India on March 21: Check how new travel meal costs in your diet?
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                <strong>Personal Loan Amortisation:</strong> What It Means For Your Payments
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                Bank, NBFC or international lender: Where is best for an overseas education loan?
+              </p>
+            </div>
+            <div class="item">
+              <p>
+                If you want to apply for a gold loan, go stick a 10-15% allocation
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+           
+     
+
+        <div class="containerA">
+            <div class="section">
+                <h2>WORLD</h2>
+                <img src="https://images.moneycontrol.com/static-mcnews/2025/01/20250111013531_wall-street.jpg?impolicy=website&width=206&height=116" alt="Market">
+                <div class="content">
+                    <p>Wall Street ends higher, dollar rises as Trump signals tariff respite</p>
+                    <div class="dotted-line"></div>
+                    <p>Putin make Trump wait for over an hour | Netizens call its ‘Putin’s Power Play’</p>
+                    <div class="dotted-line"></div>
+                    <p>Wall Street ends sharply higher as selloff prompts dip-buying rally</p>
+                </div>
+            </div>
+            <div class="section">
+                <h2>COMPANIES</h2>
+                <img src="https://images.moneycontrol.com/static-mcnews/2025/02/20250212044843_IPO-AI-image.jpg?impolicy=website&width=206&height=116" alt="Stocks">
+                <div class="content">
+                    <p>Nirmal Bang's Rahul Arora bets HAL, BEML, Solar Industries are long-term defence plays</p>
+                    <div class="dotted-line"></div>
+                    <p>Identixweb IPO set to open for subscription on March 26</p>
+                    <div class="dotted-line"></div>
+                    <p>Best week in four years may be a setup for a possible fall on tariff deadline: Nirmal Bang's Rahul Arora</p>
+                </div>
+            </div>
+            <div class="section">
+                <h2>ECONOMY</h2>
+                <img src="https://images.moneycontrol.com/static-mcnews/2024/03/sensex_nifty_stocks-stock-378x213.jpg?impolicy=website&width=206&height=116" alt="Commodities">
+                <div class="content">
+                    <p> The Reading List: March 21, 2025</p>
+                    <div class="dotted-line"></div>
+                    <p>Moneycontrol Pro Panorama | All that glitters</p>
+                    <div class="dotted-line"></div>
+                    <p>Moneycontrol Pro Panorama | The market whisperer</p>
+                </div>
+            </div>
+            <div class="section">
+                <h2>POLITICS</h2>
+                <img src="https://images.moneycontrol.com/static-mcnews/2024/04/CV-ananda-bose.jpg?impolicy=website&width=206&height=116" alt="Startups">
+                <div class="content">
+                    <p>Ministers, MLAs in Karnataka allege 'honey trap' attempts, Home Minister promises probe</p>
+                    <div class="dotted-line"></div>
+                    <p>‘Freebie’ road to chaos</p>
+                    <div class="dotted-line"></div>
+                    <p>Matter of pride that Mamata Banerjee is going to Oxford University, says governor</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="containerC">
+            <h2>IPO SNAPSHOT</h2>
+            <div class="separator"></div>
+            <div class="tabs">
+                <div class="tab active">Open IPOs</div>
+                <div class="tab">Upcoming IPOs</div>
+                <div class="tab">Listed IPOs</div>
+                <div class="tab">Closed IPOs</div>
+            </div>
+            <table>
+                <tr>
+                    <th>Company Name</th>
+                    <th>Type</th>
+                    <th>Issue Price</th>
+                    <th>Issue Size</th>
+                    <th>Lot Size</th>
+                    <th>Open Date</th>
+                    <th>Close Date</th>
+                </tr>
+                <tr>
+                    <td class="company-name">Active Infrastructures Ltd</td>
+                    <td>SME</td>
+                    <td>₹181</td>
+                    <td>77.83 Cr</td>
+                    <td>600</td>
+                    <td>21 Mar 25</td>
+                    <td>25 Mar 25</td>
+                </tr>
+                <tr>
+                    <td class="company-name">Grand Continent Hotels Ltd</td>
+                    <td>SME</td>
+                    <td>₹113</td>
+                    <td>74.46 Cr</td>
+                    <td>1200</td>
+                    <td>20 Mar 25</td>
+                    <td>24 Mar 25</td>
+                </tr>
+                <tr>
+                    <td class="company-name">Rapid Fleet Management Services Ltd</td>
+                    <td>SME</td>
+                    <td>₹192</td>
+                    <td>43.87 Cr</td>
+                    <td>600</td>
+                    <td>21 Mar 25</td>
+                    <td>25 Mar 25</td>
+                </tr>
+            </table>
+        </div>
+    
+    
+    
+
+
+    <div class="containerB">
+        <h2>PERSONAL FINANCE ADVICE</h2>
+        <hr>
+        <div class="row">
+            <!-- Left Column -->
+            <div class="column">
+                <div class="item">
+                    <img src="https://images.moneycontrol.com/static-mcnews/2024/09/20240930102839_sebi-bhawan-pti-file-photo.jpg?impolicy=website&width=124&height=70" alt="Finance">
+                    <p>SEBI eases skin-in-the-game rules for mutual fund managers, other designated employees</p>
+                </div>
+                <div class="item">
+                    <img src="https://images.moneycontrol.com/static-mcnews/2022/12/Mutual-funds_personal-finance_Wealth-management_Financial-planning_tax_Banks_Savings-accounts_Loans_Borrowing.png?impolicy=website&width=124&height=70" alt="Finance">
+                    <p>SIP stoppage ratio hits an all-time record high of 122% in February</p>
+                </div>
+                <div class="item">
+                    <img src="https://images.moneycontrol.com/static-mcnews/2025/02/20250212052608_sensex_nifty_sensexdown.jpg?impolicy=website&width=124&height=70" alt="Finance">
+                    <p>Momentum funds, once star performers, are now in a free fall</p>
+                </div>
+                <div class="item">
+                    <img src="https://images.moneycontrol.com/static-mcnews/2023/11/stock-photo-glass-jar-with-coins-stacked-on-the-table-mutual-fund-and-pension-concept-financial-and-banking-2170532529-transformed.jpg?impolicy=website&width=124&height=70" alt="Finance">
+                    <p>Net equity inflow fell by 26% to Rs 29,303 crore in February amid market selloff, shows AMFI data</p>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="column">
+                <div class="item">
+                    <img src="https://images.moneycontrol.com/static-mcnews/2021/08/software-1.jpg?impolicy=website&width=124&height=70" alt="Finance">
+                    <p>Is the road ahead looking rough for tech funds?</p>
+                </div>
+                <div class="item">
+                    <img src="https://images.moneycontrol.com/static-mcnews/2025/03/20250308030830_Nifty_sensex_marketup.jpg?impolicy=website&width=124&height=70" alt="Finance">
+                    <p>Why are investors moving to focused funds amid market correction?</p>
+                </div>
+                <div class="item">
+                    <img src="https://images.moneycontrol.com/static-mcnews/2024/10/20241030171822_Mutal-funds_.png?impolicy=website&width=124&height=70" alt="Finance">
+                    <p>Cash is king: Some mutual funds increased cash holding amid uncertainty, volatility</p>
+                </div>
+                <div class="item">
+                    <img src="https://images.moneycontrol.com/static-mcnews/2025/03/20250306080853_Cheenu-Gupta-cropped.jpg?impolicy=website&width=124&height=70" alt="Finance">
+                    <p>From coder to fund manager: Meet HSBC MF’s Cheenu Gupta who manages AUM of Rs 40,000 crore</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="opinion-section">
+        <div class="opinion-title">INTERVIEWS</div>
+        <div class="divider"></div>
+        <div class="opinion-container">
+            <div class="opinion-box">
+                <img src="https://images.moneycontrol.com/static-mcnews/2023/12/Sudeep_Shah.jpg?impolicy=website&width=151&height=151" alt="Opinion Image 1">
+                <p class="opinion-text">Chartist Talks: April charts signal strong market; SBI Securities' Sudeep Shah recommends 2 short-term stocks</p>
+                <h4>Sudeep Shah</h4><p>Deputy Vice President and Head of Technical and Derivative Research Desk
+                    SBI Securities</p>
+            </div>
+            <div class="opinion-box">
+                <img src="https://images.moneycontrol.com/static-mcnews/2024/04/Kush_Gupta.jpg?impolicy=website&width=151&height=151" alt="Opinion Image 2">
+                <p class="opinion-text">Daily Voice: This wealth manager predicts RBI rate cut in April, bull run by late 2025</p>
+                <h4>Kush Gupta</h4><p> Director
+                    SKG Investments & Advisory</p>
+            </div>
+            <div class="opinion-box">
+                <img src="https://images.moneycontrol.com/static-mcnews/2022/07/JaspreetSinghArora.jpg?impolicy=website&width=151&height=151" alt="Opinion Image 3">
+                <p class="opinion-text">Daily Voice: This CIO recommends 5 promising micro sectors for a strong portfolio</p>
+                <h4>Jaspreet Singh Arora</h4><p>Chief Investment Officer
+                    Equentis Wealth Advisory Services</p>
+            </div>
+            <div class="opinion-box">
+                <img src="https://images.moneycontrol.com/static-mcnews/2024/02/Krishnan.jpg?impolicy=website&width=151&height=151" alt="Opinion Image 4">
+                <p class="opinion-text">Daily Voice: Potential US slowdown, not visa rules, bigger threat to IT sector, says Marcellus' Krishnan</p>
+                <h4>Krishnan V R</h4><p>Chief of the Quantitative Research team
+                    Marcellus</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="opinion-section">
+        <div class="opinion-title">OPINION</div>
+        <div class="divider"></div>
+        <div class="opinion-container">
+            <div class="opinion-box">
+                <img src="https://images.moneycontrol.com/static-mcnews/2024/03/sensex_nifty_stocks-stock-378x213.jpg?impolicy=website&width=151&height=151" alt="Opinion Image 1">
+                <p class="opinion-text">The Reading List: March 21, 2025</p>
+            </div>
+            <div class="opinion-box">
+                <img src="https://images.moneycontrol.com/static-mcnews/2025/03/20250318083429_MixCollage-18-Mar-2025-02-01-PM-7436-378x213.jpg?impolicy=website&width=151&height=151" alt="Opinion Image 2">
+                <p class="opinion-text">Water, our most abused fundamental natural resource</p>
+            </div>
+            <div class="opinion-box">
+                <img src="https://images.moneycontrol.com/static-mcnews/2025/02/20250213025523_indian-rupee-rep-378x213.jpg?impolicy=website&width=151&height=151" alt="Opinion Image 3">
+                <p class="opinion-text">Chart of the Day: States’ borrowing spree isn’t leading to a spending one</p>
+            </div>
+            <div class="opinion-box">
+                <img src="https://images.moneycontrol.com/static-mcnews/2024/12/20241202083923_dollar1-378x213.jpg?impolicy=website&width=151&height=151" alt="Opinion Image 4">
+                <p class="opinion-text">Dollar slump magnifies stock market pain for foreign investors</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="containerA">
+        <div class="section">
+            <h2>MARKET</h2>
+            <img src="https://images.moneycontrol.com/static-mcnews/2023/12/Sudeep_Shah.jpg?impolicy=website&width=206&height=116" alt="Market">
+            <div class="content">
+                <p>Chartist Talks: April charts signal strong market...</p>
+                <div class="dotted-line"></div>
+                <p>Daily Voice: Wealth manager predicts RBI rate cut...</p>
+                <div class="dotted-line"></div>
+                <p>More than 250 small caps post double-digit returns...</p>
+            </div>
+        </div>
+        <div class="section">
+            <h2>STOCKS</h2>
+            <img src="https://images.moneycontrol.com/static-mcnews/2024/05/20240512141925_Godrej-Properties.jpg?impolicy=website&width=206&height=116" alt="Stocks">
+            <div class="content">
+                <p>Godrej Properties acquires 10 acres in Bengaluru...</p>
+                <div class="dotted-line"></div>
+                <p>Bulls Unstoppable: Nifty hits best weekly run...</p>
+                <div class="dotted-line"></div>
+                <p>Top gainers and losers today: Stocks that moved...</p>
+            </div>
+        </div>
+        <div class="section">
+            <h2>COMMODITIES</h2>
+            <img src="https://images.moneycontrol.com/static-mcnews/2023/04/commodities_2.jpg?impolicy=website&width=206&height=116" alt="Commodities">
+            <div class="content">
+                <p>Agri Picks Report March 21, 2025: Geojit Financial...</p>
+                <div class="dotted-line"></div>
+                <p>Agri picks report March 20, 2025: Geojit Financial...</p>
+                <div class="dotted-line"></div>
+                <p>Agri Picks Report March 19, 2025: Geojit Financial...</p>
+            </div>
+        </div>
+        <div class="section">
+            <h2>STARTUPS</h2>
+            <img src="https://images.moneycontrol.com/static-mcnews/2022/08/start-up-rep-mc-378x213.jpg?impolicy=website&width=206&height=116" alt="Startups">
+            <div class="content">
+                <p>Navigating Growth Without Funding...</p>
+                <div class="dotted-line"></div>
+                <p>Anand Mahindra, Arali Ventures invest in AI startup...</p>
+                <div class="dotted-line"></div>
+                <p>Laid-off employees of US-based edtech firm...</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="recommended-podcasts">
+        <div class="recommended-title">RECOMMENDED PODCASTS</div>
+        <div class="recommended-list">
+            <div class="podcast-card">
+                <img src="https://images.moneycontrol.com/static-mcnews/2025/03/20250319145041_Tech3-Final.jpeg?impolicy=website&width=166&height=93" alt="Tech Podcast">
+                <h4>The Dravid-Sehwag partnership driving Zoho, Accenture’s IT warning, and Apple’s India hiring | MC Tech3</h4>
+                <p>21 MAR ND 11:42</p>
+            </div>
+            <div class="podcast-card">
+                <img src="https://images.moneycontrol.com/static-mcnews/2024/04/Unusual-Suspects-podcast-image-1280-720.png?impolicy=website&width=166&height=93" alt="Unusual Suspects">
+                <h4>Rethinking gender equity: Engaging boys and men and the role of philanthropy | Unusual Suspects</h4>
+                <p>21 MAR ND 06:08</p>
+            </div>
+            <div class="podcast-card">
+                <img src="https://images.moneycontrol.com/static-mcnews/2025/02/20250218024049_main-en.jpg?impolicy=website&width=166&height=93" alt="Editor's Picks">
+                <h4>SEBI’s probe, India’s nuclear surge & IPL’s sponsorship boom | Moneycontrol Editor's Picks</h4>
+                <p>18 MAR ND 12:16</p>
+            </div>
+            <div class="podcast-card">
+                <img src="https://images.moneycontrol.com/static-mcnews/2025/02/20250218024049_main-en.jpg?impolicy=website&width=166&height=93" alt="Editor's Picks">
+                <h4>SEBI’s market call, IT slowdown, Starlink’s pricing puzzle, and more | Moneycontrol Editor's Picks</h4>
+                <p>14 MAR ND 12:10</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="grid-container">
+        <div class="grid-item" data-url="pages/page1.html">
+            <img src="https://images.moneycontrol.com/static-mcnews/2025/02/20250208060341_PM-Modi-rally-PTI-photo.jpg?impolicy=website&width=320&height=180"
+                alt="Designer Handbags">
+            <p><strong>Arvind Kejriwal Election Result Live:</strong> Arvind Kejriwal trails behind BJP's Parvesh Verma
+                by !844 vots in New Delhi</p>
+        </div>
+        <div class="grid-item" data-url="pages/page2.html">
+            <img src="https://images.moneycontrol.com/static-mcnews/2019/05/rahul-gandhi-lok-sabha-elections-2019.jpg?impolicy=website&width=330&height=168"
+                alt="Villas in Dubai">
+            <p><strong>Delho polls:</strong> Congress is third time "unlucky". Factors that may have led to yet another
+                wipeout</p>
+        </div>
+        <div class="grid-item" data-url="pages/page3.html">
+            <img src="https://images.moneycontrol.com/static-mcnews/2024/09/20240924063037_sleep-better.jpg?impolicy=website&width=510&height=288"
+                alt="Blind Husband">
+            <p><strong>Mental welness:</strong> Reduce stress, improve mental helath with these 6 daily habits</p>
+        </div>
+        <div class="grid-item" data-url="pages/page4.html">
+            <img src="https://images.moneycontrol.com/static-mcnews/2025/02/20250207135036_NEET-UG-2025-Registration-Begins.png?impolicy=website&width=510&height=288"
+                alt="Cat with Matted Fur">
+            <p><strong>Neet UG 2025 Registration Begins:</strong> Exam on MAy 4, Apply by March; direct link here</p>
+        </div>
+        <div class="grid-item" data-url="pages/page5.html">
+            <img src="https://images.moneycontrol.com/static-mcnews/2024/12/20241230200531_Wordle-Dec-31.png?impolicy=website&width=214&height=120"
+                alt="Truck Driver">
+            <p><strong>Kingdom Come Deliverance 2: </strong>What your PC needs to play the game</p>
+        </div>
+        <div class="grid-item" data-url="pages/page6.html">
+            <img src="https://images.moneycontrol.com/static-mcnews/2025/02/20250207043433_RBI-Governor-Sanjay-Malhotra-AFP.jpg?impolicy=website&width=214&height=120"
+                alt="Tennis Player">
+            <p><strong>Explained: </strong> What the RBI rate cut means for fixed income investors</p>
+        </div>
+    </div>
+
+    <div class="advisory">
+        <p><strong>Advisory Alert:</strong> It has come to our attention that certain individuals are representing
+            themselves as affiliates of Moneycontrol and soliciting funds on the false promise of assurance.</p>
+    </div>
+    <footer>
+        <div class="downbar">
+            <img src="https://images.moneycontrol.com/images/common/headfoot/logo.png?impolicy=mchigh" alt="MoneyControl Logo" class="logo">
+            <div class="social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-telegram"></i>
+                <i class="fab fa-youtube"></i>
+              
+                
+            </div>
+        </div>
+    </footer>
+    <main>
+        <section class="stocks">
+            <strong>Stocks:</strong>
+            <div class="stock-letters">
+                <span>A</span> <span>B</span> <span>C</span> <span>D</span> <span>E</span> <span>F</span>
+                <span>G</span> <span>H</span> <span>I</span> <span>J</span> <span>K</span> <span>L</span>
+                <span>M</span> <span>N</span> <span>O</span> <span>P</span> <span>Q</span> <span>R</span>
+                <span>S</span> <span>T</span> <span>U</span> <span>V</span> <span>W</span> <span>X</span>
+                <span>Y</span> <span>Z</span> <span class="others">Others</span>
+            </div>
+        </section>
+        <section class="trending">
+            <h3>Trending Topics</h3>
+            <p>Sensex Today | IT Stocks | NSE F&O Stocks | Heathrow Airport | Bajaj Finance Share Price | IPL Schedule 2025 | Gold Price</p>
+        </section>
+        <section class="news">
+            <h3>News</h3>
+            <p>Business | Markets | Stocks | India News | City News | Economy | Mutual Funds | Personal Finance | IPO News | Startups</p>
+        </section>
+        <section class="markets">
+            <h3>Markets</h3>
+            <p>Home | Currencies | Commodities | Pre-Market | IPO | Global Market | Bonds</p>
+        </section>
+
+        <section class="PersonalFinance">
+            <h3>Personal Finance</h3>
+            <p>Home |  Loans up to 50 Lakhs  |  Credit Cards Lifetime Free  |  Finance Tracker New |   Fixed Deposits | Bonds</p>
+        </section>
+
+        <section class="MutualFunds">
+            <h3>Mutual Funds</h3>
+            <p>Home |   MC 30   |  Top Ranked Funds  |  ETFs  |   Mutual Fund Screener </p>
+        </section>
+
+        <section class="Tools">
+            <h3>Tools</h3>
+            <p>Home |   Income Tax Calculator  |   EMI Calculator  |  Retirement Planning |    Gratuity Calculator  </p>
+        </section>
+        
+        <section class="Community">
+            <h3>Community</h3>
+            <p>Stock Markets  </p>
+        </section>
+
+
+
+        <section class="Network18Sites">
+            <h3>Network 18 Sites</h3>
+            <p>News18  | Firstpost | CNBC | TV18 | News18 Hindi  | Cricketnext | Overdrive | Topper | Learning </p>
+        </section>
+
+        <section class="QuickLinks">
+            <h3>Quick Links</h3>
+            <p>About Us | Contact Us | Advisory Alert | Advertise with Us | Support | Disclaimer  | Privacy Policy  | </p>
+        </section>
+
+        <div class="footer1">
+            <div class="apps">
+                <span>Download MC Apps:</span>
+                <img src="https://images.moneycontrol.com/mcnews/images/footer/googlestore.png" alt="Google Play">
+                <img src="https://images.moneycontrol.com/mcnews/images/footer/appstore.png" alt="App Store">
+            </div>
+    
+            <div class="iso-cert">
+                <img src="https://images.moneycontrol.com/mcnews/images/footer/bsi.png" alt="ISO Certification">
+            </div>
+    
+            <div class="divider"></div>
+            <div class="copyright">
+                Copyright © Network18 Media & Investments Limited. All rights reserved. Reproduction of news articles, photos, videos or any other content in whole or in part in any form or medium without express written permission of moneycontrol.com is prohibited.
+            </div>
+    
+        </div>
+
+        
+    </main>
+</body>
+</html>

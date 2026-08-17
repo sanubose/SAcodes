@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test-2Sprint2</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+            font-family:  Arial, sans-serif;
+        }
+
+         /*header*/
+
+         .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Ensures items wrap on smaller screens */
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 20px;
+    background-color: #f8f8f8; /* Add background color */
+}
+
+/* Style the navigation list */
+.header ul {
+    list-style: none;  /* Remove bullets */
+    display: flex;  /* Align items in a row */
+    gap: 20px;  /* Add space between menu items */
+    padding: 0;
+}
+
+/* Style the list items */
+.header ul li {
+    display: inline-block;
+}
+
+/* Style the links */
+.header ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+/* Style the button */
+.header button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Add hover effect */
+.header button:hover {
+    background-color: #0056b3;
+}
+
+         /* membership Css*/
+
+
+
+         .Membership-container{
+            
+            width: 100%vh;
+            background-color:black;
+            color:#fff;
+            padding: 50px;
+           max-width: 1600px;
+           text-align: left;
+         }
+
+         h1{
+            font-size: 2.5em;
+            margin-bottom: 20px;
+         }
+
+         .card{
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            align-items: center;
+            padding: 20px 0;
+         }
+         .M-info h2{
+            font-size: 1.8em;
+         }
+         .M-details{
+            margin: 10px 0;
+            font-size: 1em;
+         }
+         .price-box{
+            text-align:right;
+         }
+         .price{
+            font-weight: bold;
+            font-size: 1.5em;
+         }
+         .line{
+            border: none;
+            border-top:2px solid  rgba(255, 255, 255,0.1) ;
+         }
+
+         
+
+
+
+
+
+
+
+          /*footer Css is here*/
+        .footer{
+            /* background-color: #f9f9f9; */
+            color: #333;
+            padding: 0px;
+            border-top:0.5px;
+        }
+         .footer-container{
+            height: 200px;
+            display: flex;
+            justify-content:space-between;
+            
+            padding:0 ;
+            text-align:center;
+        }
+        .footer-column{
+            flex:1;
+            padding: 10px;
+            border:1px solid rgba(0,0,0, 0.1);
+        }
+        .c-office{
+            margin: 0;
+            padding: 80px;
+            border:1px solid rgba(0,0,0, 0.3);
+            border-radius: 50%;
+        }
+        .footer-column h3{
+            margin-top: 10px;
+            font-weight: 100;
+        }
+        .footer-column p{
+            margin-top: 10px;
+            
+        }
+        .footer-column a{
+            margin-top:20px;
+            color:black;
+            
+        }
+
+        .footer-bottom{
+            text-align: center;
+            padding:10px;
+            background-color:black;
+            color: #fff;
+        }
+
+     
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div><img src=""></div>
+         <ul>
+            <li><a href="">About</a></li>
+            <li><a href="">Membership</a></li>
+            <li><a href="">Location</a></li>
+
+         </ul>
+         <button>Book Now</button>
+    </header>
+
+
+    <!--mambership Container-->
+     <div class="Membership-container">
+         <h1>Our Membership</h1>
+           <div class="membership-row">
+            <div class="card">
+              <div class="M-info">
+                <h2>Remote <br/>Wroker</h2>
+              </div>
+
+              <div class="M-details">
+                <ul>
+                    <li>Duis Aute Irure Dolor In Reprehenderit In Voluptate Veilt Esse</li>
+                    <li>Ut Enim Ad Mininm Venian, Quis Nostrud Exercitation Ullamco</li>
+                    <li>Consecteur Adipidcing Elit, Sed Do Eiusmod Tempor Incididunt</li>
+                </ul>
+
+              </div>
+
+              <div class="price-box">
+                 <div class="price">Rs. <br/>22,000/-</div>
+
+              </div>
+            </div> 
+            <hr class="line">
+              
+            <div class="card">
+              <div class="M-info">
+                <h2>Outlying <br/>Wroker</h2>
+              </div>
+
+              <div class="M-details">
+                <ul>
+                    <li>Duis Aute Irure Dolor In Reprehenderit In Voluptate Veilt Esse</li>
+                    <li>Ut Enim Ad Mininm Venian, Quis Nostrud Exercitation Ullamco</li>
+                    <li>Consecteur Adipidcing Elit, Sed Do Eiusmod Tempor Incididunt</li>
+                </ul>
+
+              </div>
+
+              <div class="price-box">
+                 <div class="price">Rs. <br/>45,000/-</div>
+
+              </div>
+              
+                  
+            </div>
+            <hr class="line">
+
+              <div class="card">
+              <div class="M-info">
+                <h2>Resiedent</h2>
+              </div>
+
+              <div class="M-details">
+                <ul>
+                    <li>Duis Aute Irure Dolor In Reprehenderit In Voluptate Veilt Esse</li>
+                    <li>Ut Enim Ad Mininm Venian, Quis Nostrud Exercitation Ullamco</li>
+                    <li>Consecteur Adipidcing Elit, Sed Do Eiusmod Tempor Incididunt</li>
+                </ul>
+
+              </div>
+
+              <div class="price-box">
+                 <div class="price">Rs. <br/>78,000/-</div>
+
+              </div>
+            </div>
+            <hr class="line">
+
+              
+
+           </div>
+
+        </div>
+
+ <!--footer-->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="c-office">
+                    <p>C office</p>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Interested?</h3>
+                <p>Consecteur Adipiscing Elit, Sed <br/> Do Euusmod Tempor </p>
+                <a href="#">Contact Us</a>
+
+            </div>
+
+            <div class="footer-column">
+                <h3>Find Us</h3>
+                <p>Consecteur Adipiscing Elit, Sed <br/> Do Euusmod Tempor </p>
+                <a href="#">Contact Us</a>
+
+            </div>
+
+            <div class="footer-column">
+                <h3>Interested?</h3>
+                <p>+91 8887854545</p><br/>
+                <p>Office@Contact.com</p>
+                
+
+            </div>
+
+           
+        </div>
+
+        <div class="footer-bottom">
+            <p>Office 2024 &copy; All Right Reserve</p>
+        </div>
+
+
+    </footer>
+</body>
+</html>

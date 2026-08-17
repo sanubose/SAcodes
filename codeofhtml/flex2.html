@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nested Flexbox</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  background: #eee;
+  height: 300px;
+  margin: 50px;
+  padding: 0px;
+  border: 3px solid #000;
+  flex-direction: column;
+}
+
+.items {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0px;
+  height: 100px;
+  flex: 1; /* Makes each item equally divide the space */
+}
+
+.item1 {
+  background: orangered;
+}
+
+.item2 {
+  background: mediumpurple;
+}
+
+.item3 {
+  background: hotpink;
+}
+
+  </style>
+</head>
+<body>
+  <h1>Yahoo Baba : Nested Flexbox</h1>
+  <div class="container">
+    <div class="items item1">One</div>
+    <div class="items item2">Two</div>
+    <div class="items item3">Three</div>
+  </div>
+</body>
+</html>

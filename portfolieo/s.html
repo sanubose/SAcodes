@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tech Particle Design</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #0f0f0f;
+      overflow: hidden;
+    }
+    #tsparticles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    .center-text {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #00fff7;
+      font-family: Arial, sans-serif;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="tsparticles"></div>
+  <div class="center-text">Welcome to Tech World</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script>
+    tsParticles.load("tsparticles", {
+      background: {
+        color: { value: "#0f0f0f" }
+      },
+      fpsLimit: 60,
+      particles: {
+        number: {
+          value: 50
+        },
+        color: {
+          value: "#00fff7"
+        },
+        shape: {
+          type: "polygon",
+          polygon: { nb_sides: 6 }
+        },
+        size: {
+          value: { min: 5, max: 12 }
+        },
+        move: {
+          enable: true,
+          speed: 1,
+          outModes: {
+            default: "out"
+          }
+        },
+        opacity: {
+          value: 0.4,
+          random: true
+        }
+      },
+      interactivity: {
+        events: {
+          onHover: {
+            enable: true,
+            mode: "bubble"
+          }
+        },
+        modes: {
+          bubble: {
+            distance: 100,
+            size: 15,
+            duration: 2,
+            opacity: 0.8
+          }
+        }
+      },
+      detectRetina: true
+    });
+  </script>
+
+</body>
+</html>

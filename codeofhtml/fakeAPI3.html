@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E Commerce with Sorting</title>
+  <style>
+    #container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 5%;
+      margin-left: 5%;
+      margin-right: 5%;
+      grid-gap: 20px;
+    }
+
+    #container > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #cecece;
+    }
+
+    img {
+      width: 90%;
+      height: 225px;
+    }
+
+    #controls {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 5%;
+    }
+
+    select, button {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    #pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>E Commerce Products</h1>
+  
+  <!-- Sorting and Controls -->
+  <div id="controls">
+    <label for="sort">Sort By Price:</label>
+    <select id="sort" onchange="sortData()">
+      <option value="none">Select</option>
+      <option value="lowToHigh">Low to High</option>
+      <option value="highToLow">High to Low</option>
+    </select>
+  </div>
+  
+  <div id="container"></div>
+
+  <!-- Pagination Buttons -->
+  <div id="pagination">
+    <button id="prev" onclick="changePage(-1)">Previous</button>
+    <span id="page-info"></span>
+    <button id="next" onclick="changePage(1)">Next</button>
+  </div>
+
+  <script>
+    let container = document.getElementById("container");
+    let pageInfo = document.getElementById("page-info");
+    let data = [];
+    let currentPage = 1;
+    const itemsPerPage = 8;
+
+    // Fetch Data
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((res) => {
+        data = res;
+        displayData();
+      });
+
+    // Display Data
+    function displayData() {
+      container.innerHTML = "";
+      const start = (currentPage - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      const paginatedItems = data.slice(start, end);
+
+      paginatedItems.forEach((product) => {
+        const div = document.createElement("div");
+        const productImg = document.createElement("img");
+        productImg.src = product.image;
+
+        const title = document.createElement("p");
+        title.innerText = product.title;
+
+        const price = document.createElement("p");
+        price.innerText = "INR : " + product.price;
+
+        div.append(productImg, title, price);
+        container.append(div);
+      });
+
+      // Update Page Info
+      const totalPages = Math.ceil(data.length / itemsPerPage);
+      pageInfo.innerText = `Page ${currentPage} of ${totalPages}`;
+      document.getElementById("prev").disabled = currentPage === 1;
+      document.getElementById("next").disabled = currentPage === totalPages;
+    }
+
+    // Pagination Logic
+    function changePage(direction) {
+      const totalPages = Math.ceil(data.length / itemsPerPage);
+      currentPage += direction;
+      if (currentPage < 1) currentPage = 1;
+      if (currentPage > totalPages) currentPage = totalPages;
+      displayData();
+    }
+
+    // Sorting Logic
+    function sortData() {
+      const sortValue = document.getElementById("sort").value;
+      
+      if (sortValue === "lowToHigh") {
+        data.sort((a, b) => a.price - b.price);
+      } else if (sortValue === "highToLow") {
+        data.sort((a, b) => b.price - a.price);
+      }
+
+      currentPage = 1; // Reset to the first page after sorting
+      displayData();
+    }
+  </script>
+</body>
+</html>

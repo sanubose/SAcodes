@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reebok Stories</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            padding: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            height: 80%;
+        }
+        .card h3 {
+            padding: 2px;
+            margin: 0;
+            font-size: 18px;
+        }
+        .card a {
+            /* padding :5px; */
+            font-size: small;
+            text-decoration: none;
+
+        }
+       
+
+        body, h1, h4, p, a, ul, li {  /* Include all potentially problematic elements */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0; /*  Important for consistent layout */
+        }
+
+        /*  Footer Styles - Section 1 (The Reebok Club section) */
+        .footer {
+            background-color: #fff; /* White background for the top section */
+            color: #000; /* Black text color for general text */
+            text-align: center;
+            padding: 20px 0;
+            font-family: sans-serif; /*  Generic sans-serif font */
+        }
+
+        .footer-top {
+            margin-bottom: 10px; /*  Spacing between the follow us and the red area */
+        }
+
+        .footer-top p {
+            font-size: 0.8em; /*  Smaller font size for "FOLLOW US ON" */
+            margin-bottom: 5px;
+        }
+
+        .footer-top a {
+            color: #000;
+            text-decoration: underline; /*  Underline social media links */
+            font-size: 0.9em;
+        }
+
+        .footer-red {
+            background-color: #f00; /* Red background */
+            color: #fff; /* White text */
+            padding: 30px 0; /*  Increase padding for better visual balance */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-red h1 {
+            font-size: 2em;
+            margin-right: 20px; /*  Space between heading and button */
+            font-weight: bold; /*  Ensure the heading is bold */
+        }
+
+        .footer-button {
+            background-color: #000; /* Black background for the button */
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px; /*  Slightly rounded corners */
+            font-size: 1em;
+            display: inline-block; /*  Treat as inline block for proper alignment */
+            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        .footer-button:hover {
+            background-color: #333; /* Darker background on hover */
+        }
+
+        /*  Responsive adjustments (example) */
+        @media (max-width: 600px) {
+            .footer-red {
+                flex-direction: column; /* Stack elements vertically on smaller screens */
+                text-align: center;
+            }
+
+            .footer-red h1 {
+                margin-right: 0; /* Remove right margin */
+                margin-bottom: 10px; /* Add bottom margin instead */
+                font-size: 1.5em; /*  Slightly reduce the size */
+            }
+        }
+
+        /*  Footer Styles - Section 2 (Support, Legal, Currency, Payment) */
+        .footer-container {
+         
+          padding: 30px 0;
+          color: #000; /* Match the text color */
+        }
+
+        .footer-content {
+          /* max-width: 1200px;  */
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+        }
+
+        /* Column Styling */
+        .footer-column {
+          flex: 1;
+          min-width: 200px;
+          padding: 0 15px;
+        }
+
+        .footer-column h4 {
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+
+        .footer-column ul {
+          list-style: none;
+          padding: 0;
+        }
+
+        .footer-column li {
+          margin-bottom: 5px;
+        }
+
+        .footer-column a {
+          text-decoration: none;
+          color: #000;
+        }
+
+        /* Currency Styling */
+        .currency-link {
+            text-decoration: underline;
+        }
+
+        /* Payment Methods Styling */
+        .payment-methods {
+          margin-top: 20px;
+          text-align: left;
+        }
+
+        .payment-methods img {
+          border-radius: 50%;
+          width: 20px;
+          height: 20px; /* Adjust as needed */
+          margin-right: 5px;
+        }
+
+        /* Copyright Styling */
+        .copyright {
+          background-color:rgb(36, 68, 150); 
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          height: 50px;
+          text-align: left;
+          padding: 16px;
+          color:#ffffff;
+          font-size: 15px;
+          /* max-width: 1200px; */
+          margin: 0 auto; /* Center the copyright */
+        }
+        .payment-methods-list {
+          margin-top: 10px;
+        }
+        .payment-methods-list img {
+          margin-right: 5px;
+          height: 20px; /* Adjust the size as needed */
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+          .footer-content {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+          .footer-column {
+            margin-bottom: 20px;
+          }
+        }
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">STORIES</div>
+    <div class="container">
+        <div class="grid">
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/9be260d8-8c4e-45f8-b966-0b4dbcee0eb8_stories-universal-monsters.jpg" alt="Reebok X Universal Monsters">
+                <h3>Reebok X Universal Monsters</h3>
+                <p><a href="#Read more">Read more</a><p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/f42c15da-9859-44d1-a2cb-1e20b847fc9a_kalemana-stories.jpg" alt="Kalarama Festival">
+                <h3>Kalarama Festival</h3>
+                <p><a href="#Read more">Read more</a><p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/d2abeaf9-1df8-470e-9f9f-6e52e2ad2d65_stories-barbie.jpg" alt="Reebok X Barbie">
+                <h3>Reebok X Barbie</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/f1c8a1a5-183a-4c14-994b-ec1d68c30f84_dany-dann.jpg" alt="Demy Dem">
+                <h3>Demy Dem</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/b1e7c0c2-7915-438b-924b-d41f119c7f73_nano-gym-nnl.jpg" alt="Introducing Nano Gym">
+                <h3>Introducing Nano Gym</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/a9831967-ee6b-4bd5-a92d-c1a893d2eca5_breakin-stories.jpg" alt="Reebok is Dancing Across The World">
+                <h3>Reebok is Dancing Across The World</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/aa471bd5-ce17-4034-84bc-1a101afdda5e_stories-anuel.jpg" alt="Reebok x Anuel AA Collection">
+                <h3>Reebok x Anuel AA Collection</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/7fcc2080-db1a-4b19-b05b-c148f791eb35_death-valley.jpg" alt="Live Laugh Love in Death Valley">
+                <h3>Live Laugh Love in Death Valley</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/8d0d7605-d185-4a73-aab6-6c4f2224fc58_story-play-is-classic.jpg" alt="Play Is Classic">
+                <h3>Play Is Classic</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/503c4b84-72f0-4042-b9cc-019e7f4a136f_stories-hot-wheels.jpg" alt="Reebok & Hot Wheels™">
+                <h3>Reebok & Hot Wheels™</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/10a4c6fb-1e4d-4db7-8971-cf7571a0fa99_moco-stories.jpg" alt="Reebok LTD & Moco Museum">
+                <h3>Reebok LTD & Moco Museum</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/1a6c2152-c777-4455-b819-c55fe123e050_anine-stories.jpg" alt="Reebok X ANINE BING">
+                <h3>Reebok X ANINE BING</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/4c508252-28a9-4acc-86ef-02b4cfe91d0f_floatzig-stories.jpg" alt="New Floatzig 1">
+                <h3>New Floatzig 1</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/ac9d651a-1253-4e1f-98cb-681ab3bfc1ca_camilla-massa.jpg" alt="Camilla Massa and Reebok">
+                <h3>Camilla Massa and Reebok</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/198ca285-1a42-45b4-a205-6213d3993a24_stories-hunter-hunter.jpg" alt="Reebok & Hunter x Hunter">
+                <h3>Reebok & Hunter x Hunter</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/0eda8184-8eda-4afc-a098-1f2debb6dda8_classic-leather-stories.jpg" alt="Reebok Classic Leather">
+                <h3>Reebok Classic Leather</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/cdb1644b-f3ed-4134-b094-6c986dfb356a_stories-mylittlepony.jpg" alt="My Little Pony Collection">
+                <h3>My Little Pony Collection</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/cccd6ff9-ef30-4703-a8e6-e401df0ff7ff_stories-solomon.jpg" alt="Reebok X Victor Solomon">
+                <h3>Reebok X Victor Solomon</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/1b7c970b-0272-43d4-ae06-93830fbdd656_stories-creates.jpg" alt="Create What Makes You Collection">
+                <h3>Create What Makes You Collection</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/23fcd627-8018-4173-9010-46bd6c3e00bb_aries-story.jpg" alt="Reebok X Aries">
+                <h3>Reebok X Aries</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/503c4b84-72f0-4042-b9cc-019e7f4a136f_stories-hot-wheels.jpg" alt="Reebok & Hot Wheels">
+                <h3>Reebok & Hot Wheels</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/a064d98c-51a5-446f-87df-9d54191a5521_riise-stories.jpg" alt="Reebok X Riise Yoga">
+                <h3>Reebok X Riise Yoga</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/e14eec6c-c7f9-4477-9c28-6f7dc06a3d7e_reebok-botter.jpg" alt="Botter and Reebok LTD strike again">
+                <h3>Botter and Reebok LTD strike again</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/be9d11f6-6c7b-4047-9de7-dced93781e2e_barrys-nano.jpg" alt="Introducing the Reebok Nano X4 to the Barry’s crowd">
+                <h3>Introducing the Reebok Nano X4 to the Barry’s crowd</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/71156b02-4391-453e-bf56-ce3ab0381b88_reebok-paris.jpg" alt="Reebok takes over Paris stores">
+                <h3>Reebok takes over Paris stores</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/517d7648-7d7d-49d3-96aa-5c079919a2f2_stories-wodapalooza.jpg" alt="Wodapalooza Miami">
+                <h3>Wodapalooza Miami</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/503c4b84-72f0-4042-b9cc-019e7f4a136f_stories-hot-wheels.jpg" alt="Reebok & Hot Wheels">
+                <h3>Reebok & Hot Wheels</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/75ec1c64-914e-4d2a-95be-a57052178146_reebok-ss24-nano-x4-msl-br-045-crop-5.jpg" alt="Meet the Nano Family">
+                <h3>Meet the Nano Family</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/b3f4bd10-a5b9-4f49-8395-404534047998_stories-tobe.jpg" alt="Reebok X Tobe Nwigwe">
+                <h3>Reebok X Tobe Nwigwe</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/37577a6b-fa67-4c1b-be8c-b377e3066964_basketball.jpg" alt="Reebok Basketball">
+                <h3>Reebok Basketball</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/c42ea8e1-b202-4a39-b2a8-ed798b095826_dimitri-004.jpg" alt="Reebok Club City Milan">
+                <h3>Reebok Club City Milan</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/aed73cfd-8527-4433-a044-1181f6490234_desk-hero-shop-harrypotter.jpg" alt="Harry Potter X Reebok">
+                <h3>Harry Potter X Reebok</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/cc2a8bee-920f-44cb-b5d9-a93abb345079_stories-dccomics.jpg" alt="Reebok and DC Comics">
+                <h3>Reebok and DC Comics</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/61f40d77-39ee-45f0-8bac-274d2ef4a041_ny-collage-02.jpg" alt="Sound, music and culture">
+                <h3>Sound, music and culture</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/f4c4fe96-9d18-4ff2-8ab9-d2daf13fa2a6_reebok-stories-landing-ltd.jpg" alt="Introducing Reebok LTD">
+                <h3>Introducing Reebok LTD</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+            <div class="card">
+                <img src="https://www.reebok.eu/BWStaticContent/153000/f4cc716c-be17-4a09-9c22-8cbd68772e73_evan-desktop-2.jpg" alt="Evan Belforti">
+                <h3>Discover the Reebok Club C LTD with the designer Evan Belforti</h3>
+                <p><a href="#Read more">Read more</a></p>
+            </div>
+
+            
+
+        </div>
+    </div>
+      
+    <footer class="footer">
+        <div class="footer-top">
+            <p>FOLLOW US ON</p>
+            <a href="#">@REEBOKLTD</a> AND <a href="#">@REEBOKEUROPE</a>
+        </div>
+
+        <div class="footer-red">
+            <h1>JOIN THE REEBOK CLUB</h1>
+            <a href="#" class="footer-button">JOIN THE CLUB</a>
+        </div>
+    </footer>
+
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h4>SUPPORT</h4>
+          <ul>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Track your order</a></li>
+            <li><a href="#">Return your order</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>LEGAL</h4>
+          <ul>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Cookie Preferences</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>COUNTRY/CURRENCY</h4>
+          <p>United Kingdom / £ <a href="#" class="currency-link">Change</a></p>
+
+          <div class="payment-methods">
+            <h4>PAYMENT METHODS</h4>
+            <div class="payment-methods-list">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAkFBMVEX///8Ab88AZMwAbM4AaM0AZs3Q4vRjmdsAbc4AYswAZcxNjtkAas4+iNebvegAcdDZ6Pe70u+QteUuftSTt+Xm8PnE2PG91PBaldr0+v0wgdTf6/j4/P7v9vwAX8tvoN6DruIAWMnM3vOnw+l4p+ATdtGxy+xEitdxo99gl9urx+t7quGDsuSfwOgAVskbedLO6FYxAAAOWElEQVR4nO2c6XLivBKGbUsG2TFLSNjXkABZJpP7v7uDbXVrt4EwVd+p6vdXYsmS/GhrtSSiiEQikUgkEolEIpFIJBKJRCKRSCQSiUQikUgkEolEIpFIJBKJRCKRSCQSiUQikf6rmpweQL29FXZUYQ8Pp1cz8FMP7E3qh92HoHrjKkbPDZl1R8e1lvK+588xWu/7X92Zk2kprZxv1lsrlWWvY3x6z02nWYuCgfiDFdZPmFJxMAMPhRaYPdYPn/SHpjbLKkbiCyvSrDdVH5HVT/OR8c2fpyznevrJEQOPmVaWsQVrE/iGx8QsfKs6WayULS1YXAuME6NahvqLcQqwRBxSUifOA8EsO80BVl4/KkZGWVJmvZIqWHq+xZcFSysp15vdY2oWvlUfegmK9yZYhdG+v4r7wjqnH4+DsMZPuZuygrVPtMeCzyNdK6M9aEPNtbDGei7nD1oboSYswfQwYRT+HrBiNlgFYA0Lu1WZsGZGMO+HYTGtI14La2e0j5g/N8CKczWsRBOT8l1gxXzrhzXm3mQR1tgYEmIxCMOKueo9V8JaWaUwG48Ni81UUNesagdWcIDnmBVKlaEemx1YT752pcF6M6s8zo2vN2FpHfFKWN9QdCiNNma6sOIEBwObsg2LBU0HmaQYoAnQG+B4VLdsG9ZzivkwniQctJGFnUNh4CvYogEWw3Z3JayBzKWATi+evLBkNI6GzzE1CmDDEjyYpXxR6N8zgcbFTh5Y8xRYiqT3uZw7SUIx2QPQ0odxG5bqiNfBmsqBh/XWMAQlejZQCnEQMh6EnOpiicFdYCGeerSxYKkqK/zWI9RltoQ61wcMB1acTW6B1ZNp50ecT5humEIxiz9yUAB7b72xAuxuGIYF/A1Y0MQFW7mwIE3Bx570zt8so587H047iRbVgQUd8SpYYJAKoc1uumEKsPKO7Cd8ZASwp4mVX3vL8sP6AViRAwunuiTwTQuBVR79yDrXDVOEhcNssb0eFsxoFYIfGL40wxRgJcv3ugWBlSKZ8H4IVrGyM4MHXlhg7omDCws+yRxOlcAgLascZyyRqAIALLFAWnVHvAbW2GizODGqKU/BGkKJ6iENljrZOADr3LRsJXIY8Y1Za5xEuy6skezplqmJmulVvoJv4t8OLLb9lgmf29jqSlhgkLKPKklISDNMFSwYVOolj3zzPN5PA7BcFV0T1mEH+polaLl8urC2spjm0hRlVjmaXJphirBm0QIyqjriFbDQVJITIGYjfLBk/daDkez950+7HBaTsNTUBuJockqb2IQFq9fEP7x/GVUeDYGdMkw1WEtcd5Qd8QpY2L1/6v+XMA7maJhqsCCbsgwwGZzHhdth+ZS8emCB8ZSb61YgkZpVjjO8Mkw1WNEzdkSxugbWQaaagqV5cgxTDRYUosxRdozy8+8KC/xpJqxZY8vqW1WOhoTqtjosoyNeDmuqTyJ1GcEqR8NUh/UJf68jWZnJ5L6wcjDxTFgwZyeWs60WrEE4docDTBZgmBqw1Jo7m9iFDwuaq/jZdmttcWkF2eiw5hIu/5QVIuKoAZY7G340whJFhhOLCQvG0nQaucJ2xLryM7ZoIIAFbcCK+tgRD0d+ISzlIVXLfyw5GKY6LKhh8SBH3GIXuWMk2gDffVuPJixhuBs4+1K9zIQFheCWA7QS9qrY9WGAYWrCUq8IaJWtsLp+r4fM5s0DC4Z1Id/MyoeBlnWBBT/YnpsyfFhh2FAmLFw3Fm5iHdOrZkrwlQ+WmhEh9zZYY3u9ZEp6TA1YETPGo9qqDHXDy5Y7nQR7rW5EmbDmUFT+x0ls1lTlYJhasFRHBLXBsjykTjZ9DyzT616X5PaWVbF+3AB6rg3f1kIaHS/J0Uqrpcrl4syGpfXdi2DZvjtb1eBtwxoabb5ufL+EFfUhTcFCY1b0iPkmX6at9dVc5dIwdWAtrc7bAkt5SAtTwLA2TE1Yhl0gcw51QzZ01Fl5YEVvYK+wA65JbU/pAVtCwbuvk06VmlHl1lfgtN7zwlKm6UWwIHt2GpmCPZvaMLVg6V5muZoImg55YuvF8MHjQnoGrYOhLWzDmqreJhjPy6Q373qVF9ZXKI9pxwvL6ojNsKa4+LQXp9iwK8PUgrVWzRempsuNUmt3R3kdlE0Nflhnw6LrGGfVIIBO8a31FTiWVQtGDyyzIzbD6jkLGzebmQtLDbVoXNwB1nyAU6J3uVMV2BqcKqfbY7DKtTlh7IVlzoiNsHDnvfaI+LMpDVMbltqmgPLdAZa2K5gG9g3PxTJHmWqduAhWufL7lpazD5bRERthdcEZ45mzMJvyVIANK8I9J1i23gNWtMcxKf8KwIqeM61xVevMTkOV46BcGqZeWHpHbII11rGHs0nnLqx38FrCOu4usKIj0kqeA7CicTdPwSyuFg8fyMPzFTj2n81BLyy9IzbBetuY85OVDYRuRtGz/PsFBoX9i3wARtEjPJD5HTJnFrRmQ5lk9qNnChklyd+zOTyViW52RsnWn7NDWr1bjm3Lv1BO35pxjgnyaCVjZuaJqgUW9cU2djV1UL7QlRY8hr/m9rv4AfBgbaftamXEGBq5qlh7LVHXg7VeQmZYto6763rWENObB7LEXLDwJBKJRCKRSKT/osb7sIk51g3QofOqenO/WvmSGRqW4AVRonVDaYy1yHw5dCLsdQN37YZ37NslV0utQhydFxmdF/Wfvbrq4psvu2j84kshH3TVQb61P8rhXTvrd/TGqfPvYqzlbsE9Mf4irMfuwJfC6bew7AO4mspFuPIWCMultMNVavruHLbHl4rkB+pz7Y/CiuQJq9w+x6qXBtx/61lW+NbyGOFxkDBfhMx/Rud+sDRvgXmE8ROf82rLPLi7JzLpWJiHo2zAw/HYDmvCA1sYmRwo3jP/5pk6LfvPYEV9pMIO6qjdBJ8WlSMmDOv8FX9aYJ2jjC6Ftc8CHiI4Kdu1twxBycUXw26HFX1h7uhBj5a4dSoJNsGKN1UxA91QRql7Yms3XLHQnqs86vIZ2mcUhsPoX8HS9hK4HGTXuC0uWD2dNcKqj5E2tSz4lNaWtQveOJOeRu9oVSpv8GhdDcudX9DldsJRIqn54d0RAYeEEBZT76v7cMlUhyVUFHUisG4YCKsIzIbIglkbcdI1ecQDNPb3mLdwfgeLfy+dPVMc0NXFmqw8FveA8PCaA8BiM0ym83jCTb+yVUA3FD0V5bjAKFXNQDcsRv7S4D26tLu3gutywGEYUXx3Ah9zB1iN2x9qK6s8qPmOfSXDpo2wjP09PMN60GAZdxbw6+q5CloWt28DS4Hf3b41iYLthcBR3l/qIljaVpYolIGVqFNECKurv6YOAEchWGvjlkobLLjtkYeMcZkhu8No7tFlsLSTQwL7YK5tI/hbFm71lrvLflgwCtWnmI8tsOBkUBoyA+BUedz81TcKYflOKGqaOFMy1xuRv2XhNZIS1twLawWfV7UFbFmefUK9tOLJud5RCy+3PfvDfye8m7Z9tjUy9lRsA6YwVlr+loVzZLnv529ZeK2hegqwWLfvlKa0UaZ4vjR+w5Dvo1rk42572htBeP91eo/RXYMVM+c87cb0CIwMO4mZG+peWHM8cLHQYZ3WY9DkAyaL+uAcGqWe0iwj3bAVhQpKE74dWp9zXnOqCHny0w80xdtgubKunmuzYDkem4F4jamnmsQWrajqzs3cY4rlyiapKr/BKK0tusChSVFIozB0UFBw9vvVThMs576DOtGrH+IzYOnXn5RvoDoa3WjBy2s/rbCGm1B4Wvfu99D3CMfH9G9hvav1PrcWD43LnZpEEyzB6vGxYW0o1wqvYVp121oEz1VuvFcS7gTL7oY7/Wsz09JpgiVJNMBiXA45rS2r9IKEltKbqrWvekmLX+IOsIQjC9a3MRwI8+pIAywgEYQl+AGmM4Tllgav3w4fMs60AEynkOfCv+OkYMwNj+1fsLkZlhg4Sg1YU2voBH9DCyyRP8kiBmCxVDv8jldaY7c0qnKG/dkTPhd4k1EdcZruej8YgePN/pD1djWstlP1Hcfpxn602VjB0uqcsSKJcUmE037pdVBXTLZHLZm25Y5PY2Vb+SNMwVXhve1yjS6EpS8O4TsLzU+rYMEvG5z/+jnttPl6jtbF2c5CH5lp8rctd/xi2jrBJ7jtZC0vrtdlsNbodmBPXzgI8w+MEFju6DKXO3jeNtXN2FtaVtvdzosKd5kug/WD4wIfa+4stZS+GtYKrwlIh2Kl22DB9cNAN8Qzmffrhk0LaXSV1vth6hhwBiPSNbDqReUYL0moW4iqG14zFH/h6tofvoSqvq4KPMKF9FPP1gJIKCd87e2bq9+aAPff1S2rvCeEVywRjfqBB6c0vV1V3IXzHAfRytnqvrdQ+fzWKlULaUfpro6itncS2QaWqaK1vxWWZozgL/IpO8spTf3DW6PUCVBFKa0190UMN38Y6VewXMndHbVxmKIzV9uoru2f67thpJm5AtYDrVtho/AlsaKqhEFod+cMs8VldwdYaku60JYLyrsl4vWVsFQy2GZFWtvwrVthYViMr5th8d/Ohe2w9mo71fBr/0HDqjJOb4MVfShvWpuLpgUWk1sUQVjpr4+FtMJacns7FaRG/dI4vakbRpq5VTfQW7uhSJ7k4O2HJYrst2ZDBcv7C6yV8t15fodfWC1y+4BWj0PEZBaN5a+qanaqAwui6LBW+LuxfDA3f7jVnm7qHencCSiKNFngfMrcn5wteMK7v3bPlDrOuiHNXqP3D/zHcTSuMKz7cFzLZD5GvkxqWBDFqOMx5j97O5uP4dJ8VDPxpxthOzpq3gTPm2/9yT18yiQSiUQikUgkEolEIpFIJBKJRCKRSCQSiUQikUgkEolEIpFIJBKJRCKRSCQSiUQi/V/ofztfClyRaCuQAAAAAElFTkSuQmCC" alt="American Express">
+            <img src="https://www.svgrepo.com/show/328114/diners.svg" alt="Discover">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/JCB_logo.svg/450px-JCB_logo.svg.png?20160827145146" alt="JCB">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Maestro_logo.svg/189px-Maestro_logo.svg.png?20171129173514" alt="Maestro">
+            <img src="https://imageio.forbes.com/blogs-images/steveolenski/files/2016/07/Mastercard_new_logo-1200x865.jpg?format=jpg&height=600&width=1200&fit=bounds" alt="Mastercard">
+            <img src="https://purepng.com/public/uploads/large/purepng.com-visa-logologobrand-logoiconslogos-251519938794uqvcz.png" alt="Visa">
+            <br>
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968601.png" alt="Apple Pay">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeyP_0YtjGAPJnOyzHmO-qQ82oXl_v4nIoFw&s" alt="PayPal">
+            <img src="https://brandlogos.net/wp-content/uploads/2020/11/klarna-logo.png" alt="Klarna">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      Reebok™ is a trademark of Reebok International Limited. ©2023 Reebok International Limited. All Rights Reserved.
+    </div>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Impact Visualization</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin:0;
+      padding:20px;
+      font-family: 'Inter', sans-serif;
+      /* background: linear-gradient(to right, #e0f7fa, #e0ecff); */
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .card {
+      /* margin-top: 10px; */
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    canvas {
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>🎯 Who Benefits from This Policy?</h2>
+    <canvas id="impactChart"></canvas>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('impactChart').getContext('2d');
+
+    const impactChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ['Youth', 'Elderly', 'Women', 'Rural Population', 'Others'],
+        datasets: [{
+          label: 'Policy Beneficiaries',
+          data: [40, 30, 15, 10, 5], // we  can change  the values here
+          backgroundColor: [
+            '#00adb5',
+            '#ffce56',
+            '#ff6384',
+            '#36a2eb',
+            '#9c27b0'
+          ],
+          borderColor: '#ffffff',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              color: '#333',
+              font: {
+                size: 14,
+                weight: '600'
+              }
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                let label = context.label || '';
+                let value = context.raw || 0;
+                return `${label}: ${value}%`;
+              }
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

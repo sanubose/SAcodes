@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Democracy Engagement Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #f5f7fa;
+    }
+
+    header {
+      background-color: #1a1a2e;
+      padding: 20px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      color: #ffffff;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .logo span {
+      color: #00adb5;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #00adb5;
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .auth-buttons button {
+      padding: 8px 18px;
+      border-radius: 10px;
+      border: 2px solid #00adb5;
+      background: transparent;
+      color: #00adb5;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .auth-buttons button:hover {
+      background-color: #00adb5;
+      color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+      }
+
+      .auth-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+      }
+
+      nav ul, .auth-buttons {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Democracy<span>Hub</span></div>
+    <nav>
+      <ul>
+        <li><a href="#notifications">Notifications</a></li>
+        <li><a href="#laws">Laws</a></li>
+        <li><a href="#feedback">Feedback</a></li>
+        <li><a href="#vote">Vote</a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#initiatives">Initiatives</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <button onclick="login()">Login</button>
+      <button onclick="signup()">Sign Up</button>
+    </div>
+  </header>
+
+  <script>
+    function login() {
+      alert("Login clicked — yahan redirect ya modal aayega");
+    }
+
+    function signup() {
+      alert("Sign Up clicked — yahan registration form aayega");
+    }
+  </script>
+
+</body>
+</html>

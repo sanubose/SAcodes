@@ -1,0 +1,89 @@
+<!-- File Organizer System -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Organizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .folder-container, .file-container {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 200px;
+            min-height: 300px;
+        }
+        .folder, .file {
+            padding: 5px;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+        }
+        .folder:hover, .file:hover {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>File Organizer System</h1>
+    <div class="container">
+        <div id="folders" class="folder-container"></div>
+        <div id="file-list" class="file-container"></div>
+    </div>
+
+    <script>
+        // File Organizer System
+        const files = [
+            'document1.txt', 'presentation1.pdf', 'song1.mp3', 'installer1.exe', 'archive1.rar',
+            'report1.docx', 'image1.jpg', 'graphic1.png', 'animation1.gif', 'compressed1.zip',
+            'document2.txt', 'presentation2.pdf', 'song2.mp3', 'installer2.exe', 'archive2.rar'
+        ];
+
+        const fileIcons = {
+            '.txt': '📄', '.pdf': '📕', '.mp3': '🎵', '.exe': '🖥', '.rar': '📦',
+            '.docx': '📑', '.jpg': '🖼', '.png': '🖼', '.gif': '🎞', '.zip': '🗜'
+        };
+
+        const categorizedFiles = {};
+
+        // Categorize files by type
+        files.forEach(file => {
+            if (!file) return;
+            const ext = file.substring(file.lastIndexOf('.'));
+            if (!categorizedFiles[ext]) categorizedFiles[ext] = [];
+            categorizedFiles[ext].push(file);
+        });
+
+        // Display folders
+        const folderContainer = document.getElementById('folders');
+        Object.keys(categorizedFiles).forEach(ext => {
+            const folder = document.createElement('div');
+            folder.classList.add('folder');
+            folder.innerHTML = `${fileIcons[ext] || '📁'} ${ext.toUpperCase()}`;
+            folder.addEventListener('click', () => showFiles(ext));
+            folderContainer.appendChild(folder);
+        });
+
+        // Show files inside a folder
+        function showFiles(ext) {
+            const fileContainer = document.getElementById('file-list');
+            fileContainer.innerHTML = '';
+            categorizedFiles[ext].forEach(file => {
+                const fileDiv = document.createElement('div');
+                fileDiv.classList.add('file');
+                fileDiv.innerHTML = `${fileIcons[ext] || '📁'} ${file.replace(ext, '')}`;
+                fileContainer.appendChild(fileDiv);
+            });
+        }
+    </script>
+</body>
+</html>

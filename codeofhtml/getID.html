@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document.getID</title>
+</head>
+<body>
+    <script>
+        // Correctly using text-align to center the content
+        document.write('<h1 style="color:red; text-align:center;">Welcome to my world</h1>');
+        
+        function ShowNumber(){
+            var teliphone = document.getElementById("teliphone").value;
+            alert("This is Teliphone Number: " + teliphone);
+        }
+    </script>
+    
+    <form>
+     Number: <input type="text" id="teliphone" ><br/><br/>
+     <input type="button" value="showcontact" onclick="ShowNumber()">
+    </form>
+
+    <script>
+        document.writeln('<h3 style="color:green;">End the form now</h3>');
+    </script>
+</body>
+</html>

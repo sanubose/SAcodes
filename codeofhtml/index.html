@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eKatha Voice Assistant</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; }
+        .container { margin-top: 50px; }
+        button { font-size: 18px; padding: 10px 20px; cursor: pointer; }
+        #status { margin-top: 20px; font-weight: bold; color: blue; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BBMP eKatha Voice Assistant</h1>
+        <button id="startBtn">🎤 Start Voice Input</button>
+        <p id="responseText">Click the button and speak...</p>
+        <div id="status"></div>
+    </div>
+
+    <script>
+        let startBtn = document.getElementById("startBtn");
+        let responseText = document.getElementById("responseText");
+
+        let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = "en-IN";
+
+        startBtn.addEventListener("click", () => {
+            responseText.innerText = "Listening...";
+            recognition.start();
+        });
+
+        recognition.onresult = function(event) {
+            let transcript = event.results[0][0].transcript;
+            responseText.innerText = "You said: " + transcript;
+
+            fetch("http://localhost:5000/process-speech", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ speechText: transcript })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("status").innerText = data.message;
+            })
+            .catch(error => console.error("Error:", error));
+        };
+    </script>
+</body>
+</html>

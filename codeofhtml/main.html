@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    #tsparticles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background-color: rgba(0, 0, 0, 0.6);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: #fff;
+    }
+
+    nav a {
+      margin-left: 25px;
+      color: #ccc;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+    }
+
+    section {
+      padding: 80px 60px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .skills i, .contact i {
+      font-size: 40px;
+      margin: 15px;
+      color: #00adb5;
+    }
+
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .project-card {
+      flex: 1 1 300px;
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #00adb5;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: #111;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="tsparticles"></div>
+
+  <header>
+    <h1>SANU BOSE</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Hi, I’m a Web Developer</h2>
+    <p>I create clean, premium, and user-friendly websites using HTML, CSS, and JavaScript.</p>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Main ek passionate web developer hoon jo design aur code dono me interested hai.</p>
+  </section>
+
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div>
+      <i class="fab fa-html5"></i>
+      <i class="fab fa-css3-alt"></i>
+      <i class="fab fa-js"></i>
+      <i class="fab fa-react"></i> 
+      <i class="fab fa-python"></i> 
+      <i class="fas fa-database"></i>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>Project 1</h3>
+      <p>HTML, CSS ka use karke ek responsive layout banaya.</p>
+    </div>
+    <div class="project-card">
+      <h3>Project 2</h3>
+      <p>JavaScript ka use karke interactive UI elements design kiye.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <div style="margin-top: 20px;">
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a> 
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Sanu Bose. All rights reserved.</p>
+  </footer>
+
+  <script>
+    tsParticles.load("tsparticles", {
+      background: { color: { value: "#0f0f0f" } },
+      fpsLimit: 60,
+      particles: {
+        number: { value: 60 },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.2 },
+        size: { value: 3 },
+        move: { enable: true, speed: 1 },
+        links: { enable: true, color: "#ffffff", distance: 150, opacity: 0.3, width: 1 }
+      },
+      interactivity: {
+        events: { onhover: { enable: true, mode: "repulse" }, resize: true },
+        modes: { repulse: { distance: 100, duration: 0.4 } }
+      },
+      detectRetina: true
+    });
+  </script>
+</body>
+
+</html>
